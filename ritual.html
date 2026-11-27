@@ -94,7 +94,7 @@
 
             <div class="ritual-hero-photo">
 
-                <img src="Images/ritual.png"
+                <img src="Images/TeaSet.png"
                      alt="Enjoying an everyday cup of tea">
 
             </div>
@@ -174,7 +174,7 @@
 
                 <div class="ritual-tea-photo">
 
-                    <img src="Images/green.png"
+                    <img src="Images/Front/green.png"
                          alt="STILL Green Tea packaging">
 
                 </div>
@@ -226,7 +226,7 @@
 
                 <div class="ritual-tea-photo">
 
-                    <img src="Images/white.png"
+                    <img src="Images/Front/white"
                          alt="STILL White Tea packaging">
 
                 </div>
@@ -278,7 +278,7 @@
 
                 <div class="ritual-tea-photo">
 
-                    <img src="Images/yellow.png"
+                    <img src="Images/Front/yellow"
                          alt="STILL Yellow Tea packaging">
 
                 </div>
@@ -330,7 +330,7 @@
 
                 <div class="ritual-tea-photo">
 
-                    <img src="Images/oolong.png"
+                    <img src="Images/Front/oolong"
                          alt="STILL Oolong Tea packaging">
 
                 </div>
@@ -383,7 +383,7 @@
 
                 <div class="ritual-tea-photo">
 
-                    <img src="Images/puerh.png"
+                    <img src="Images/Front/puerh"
                          alt="STILL Pu-Erh Tea packaging">
 
                 </div>
@@ -436,7 +436,7 @@
 
                 <div class="ritual-tea-photo">
 
-                    <img src="Images/black.png"
+                    <img src="Images/Front/black"
                          alt="STILL Black Tea packaging">
 
                 </div>
@@ -539,7 +539,7 @@
 
                 <article class="ritual-step">
 
-                    <img src="Images/prepare.png"
+                    <img src="Images/TeaSet.png"
                          alt="Preparing a cup of tea">
 
                     <p class="eyebrow">01 / PREPARE</p>
@@ -558,7 +558,7 @@
 
                 <article class="ritual-step">
 
-                    <img src="Images/discover.png"
+                    <img src="Images/Front/green.png"
                          alt="Discovering a message on a tea tag">
 
                     <p class="eyebrow">02 / DISCOVER</p>
@@ -578,7 +578,7 @@
 
                 <article class="ritual-step">
 
-                    <img src="Images/continue.png"
+                    <img src="Images/TeaSet.png"
                          alt="A freshly brewed cup of tea">
 
                     <p class="eyebrow">03 / CONTINUE</p>
@@ -708,16 +708,29 @@
         const navigation =
             document.querySelector("#main-navigation");
 
-        menuButton.addEventListener("click", () => {
+        function closeMenu() {
+            navigation.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+        }
 
-            const isOpen =
-                navigation.classList.toggle("open");
+        menuButton.addEventListener("click", event => {
+            event.stopPropagation();
+            const isOpen = navigation.classList.toggle("open");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+        });
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
+        navigation.addEventListener("click", event => {
+            if (event.target.closest("a")) closeMenu();
+        });
 
+        document.addEventListener("click", event => {
+            if (!navigation.contains(event.target) && !menuButton.contains(event.target)) {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 900) closeMenu();
         });
 
     </script>

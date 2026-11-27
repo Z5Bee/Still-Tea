@@ -879,8 +879,8 @@ footer .footer-bottom p {
 .black-bg {
     background: radial-gradient(
         ellipse at top,
-        #f1d6c8,
-        #cfa69b
+        #dfc9d2,
+        #a98a9a
     );
 }
 
@@ -913,16 +913,8 @@ footer .footer-bottom p {
 }
 
 .tea-product-info p {
-    max-width: 320px;
-}
-
-.tea-quantity {
     font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 20px;
 }
-
 
 
 /* =====================================
@@ -1990,7 +1982,8 @@ nav .shop-link.active,
 
 .tree-home {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: minmax(0, 60%) minmax(0, 40%);
+    column-gap: 4%;
     align-items: center;
     gap: 5%;
     margin: 20px 3.3%;
@@ -2112,6 +2105,9 @@ nav .shop-link.active,
     line-height: 1.3;
     margin: 0;
     overflow-wrap: anywhere;
+
+    max-height: 150px;
+    overflow-y: auto;
 }
 
 .tree-quote #quote-author {
@@ -2184,103 +2180,58 @@ nav .shop-link.active,
 
 }
 
-.home-page .tree-home {
-    grid-template-columns: 60% 40%;
-    min-height: 78vh;
-}
-
-.home-page .tree-home-text {
-    max-width: 420px;
-    justify-self: end;
-    width: 100%;
-}
-
-.home-page .tree-home-text h1 {
-    margin-bottom: 18px;
-}
-
-.home-page .tree-home-text .tree-home-intro {
-    margin-bottom: 12px;
-}
-
-.home-page .tree-form-heading {
-    margin: 22px 0 12px;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
-.home-page #quote-form {
-    display: block;
-    width: 100%;
-    max-width: 380px;
-    margin: 0;
-}
-
-.home-page #quote-form textarea {
-    min-height: 110px;
-    height: 110px;
-}
-
-.home-page #quote-form input {
-    padding: 10px 12px;
-}
-
-.home-page #quote-form button {
-    width: auto;
-    min-width: 150px;
-    margin-top: 12px;
-    border-radius: 5px;
-}
-
-.home-page #character-count {
-    margin: 4px 0 12px;
-}
+/* =====================================
+   RESTORE HOMEPAGE PURPOSE AND FORM
+===================================== */
 
 .home-purpose {
     display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
     gap: 40px;
-    margin: 25px 3.3%;
+    margin: 0 3.3%;
     padding: 35px 5%;
     border-top: 1px solid #d7d8cc;
     border-bottom: 1px solid #d7d8cc;
-    border-radius: 0;
-    background: transparent;
 }
 
 .home-purpose h2 {
-    margin: 8px 0 0;
     font-size: clamp(32px, 3vw, 48px);
+    margin: 0;
+    line-height: 1.1;
 }
 
 .home-purpose > div:last-child {
     text-align: right;
+    align-self: start;
+    margin-top: 0;
+}
+
+.home-purpose > div:last-child .store-button {
+    display: inline-block;
+    margin: 0 0 10px;
 }
 
 .home-purpose > div:last-child p {
-    margin-bottom: 12px;
+    margin: 0;
 }
 
 @media (max-width: 768px) {
 
-    .home-page .tree-home {
-        grid-template-columns: 1fr;
-        min-height: auto;
-    }
-
-    .home-page .tree-home-text {
-        max-width: 560px;
-        justify-self: start;
-    }
-
     .home-purpose {
         grid-template-columns: 1fr;
-        text-align: left;
+        gap: 25px;
     }
 
     .home-purpose > div:last-child {
         text-align: left;
     }
 
+}
+
+body {
+    overflow-x: hidden;
+}
+.home-purpose > div:last-child {
+    align-self: end;
 }
