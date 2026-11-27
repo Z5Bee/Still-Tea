@@ -2516,3 +2516,18 @@ body {
     }
 
 }
+/* TREE QUOTE POSITION AND SIZE */
+
+@media (min-width: 1100px) {
+    .tree-quote {
+        top: 40%;
+        left: 75%;
+        width: 46%;
+        transform: none;
+    }
+}
+
+.tree-quote #quote-text {
+    max-height: none;
+    overflow: visible;
+}
