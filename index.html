@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>STILL; | Hope in a Cup</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <a class="logo" href="#">still;</a>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#tree-section">Our Tree</a>
+            <a href="#share">Share Hope</a>
+        </nav>
+    </header>
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="hero" id="about">
+
+        <p class="eyebrow">HOPE IN A CUP</p>
+
+        <h1>There is still<br>more to your story.</h1>
+
+        <p class="intro">
+            Someone was making tea hundreds of years ago.<br>
+            Someone is making tea today.<br>
+            Someone will make tea tomorrow.
+        </p>
+
+        <a href="#tree-section" class="button">
+            Discover a little hope
+        </a>
+
+    </section>
+
+
+    <!-- INTERACTIVE TEA TREE -->
+
+    <section class="tree-section" id="tree-section">
+
+        <p class="eyebrow">A COMMUNITY OF HOPE</p>
+
+        <h2>The Tree of Tomorrow.</h2>
+
+        <p class="section-description">
+            Every leaf holds a thought left behind by someone.
+            Select a leaf to discover a little hope,
+            or leave some for someone else.
+        </p>
+
+        <div class="tree-container">
+
+            <img
+                class="tree-artwork"
+                src="Untitled_Artwork 11.png"
+                alt="An illustrated green leafy tree against a dark background">
+
+            <svg id="tea-tree"
+                 viewBox="0 0 800 1067"
+                 preserveAspectRatio="none"
+                 aria-label="Interactive tree of hopeful messages">
+
+                <!-- JavaScript adds the interactive leaves here -->
+
+                <g id="leaves"></g>
+
+            </svg>
+
+        </div>
+
+        <p id="leaf-count" aria-live="polite">
+            0 leaves of hope
+        </p>
+
+
+        <!-- MESSAGE DISPLAY -->
+
+        <div class="quote-card" aria-live="polite">
+
+            <p class="eyebrow">A LITTLE HOPE FOR TODAY</p>
+
+            <blockquote id="quote-text">
+                Select a leaf to discover its message.
+            </blockquote>
+
+            <p id="quote-author"></p>
+
+            <button id="random-leaf" type="button">
+                Discover another leaf
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUBMISSION FORM -->
+
+    <section class="share-section" id="share">
+
+        <p class="eyebrow">LEAVE SOMETHING BEHIND</p>
+
+        <h2>Plant a little hope.</h2>
+
+        <p class="section-description">
+            A favorite quote, a little reminder,
+            or something you wish someone had told you.
+            Your words could be what someone needs today.
+        </p>
+
+        <form id="quote-form">
+
+            <label for="message">Your thought</label>
+
+            <textarea
+                id="message"
+                maxlength="200"
+                placeholder="Something worth holding onto..."
+                required></textarea>
+
+            <p id="character-count">0 / 200</p>
+
+            <label for="author">Your name (optional)</label>
+
+            <input
+                type="text"
+                id="author"
+                maxlength="40"
+                placeholder="Anonymous">
+
+            <button type="submit">
+                Plant a leaf
+            </button>
+
+            <p id="success-message" role="status"></p>
+
+        </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <a class="logo" href="#">still;</a>
+
+        <p>Through the past. To the present.</p>
+        <p>Through the bad. To the good.</p>
+        <p>There is still tea.</p>
+
+        <div class="support">
+            <p>Every story deserves to continue.</p>
+
+            <p>
+                Need support? Call or text
+                <a href="tel:988">988</a>
+                or visit
+                <a href="https://988lifeline.org">
+                    988lifeline.org
+                </a>.
+            </p>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
