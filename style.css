@@ -2503,3 +2503,16 @@ body {
     }
 
 }
+/* FIX MOBILE NAVIGATION */
+
+@media (max-width: 900px) {
+
+    .shop-header nav,
+    .ritual-header nav {
+        left: 20px;
+        right: 20px;
+        transform: none;
+        width: auto;
+    }
+
+}
