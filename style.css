@@ -98,7 +98,7 @@ header {
 
 .logo img {
     display: block;
-    width: 65px;
+    width: 120px;
     height: auto;
 }
 
@@ -579,6 +579,14 @@ footer p {
     }
 }
 
+@media (min-width: 901px) {
+
+    .logo img {
+        width: 140px;
+    }
+
+}
+
 
 /* REDUCED MOTION ACCESSIBILITY */
 
@@ -591,6 +599,672 @@ footer p {
     *, *::before, *::after {
         animation: none !important;
         transition: none !important;
+    }
+
+}
+
+/* =====================================
+   STILL; STOREFRONT
+===================================== */
+
+.shop-page {
+    background: #fcfaf3;
+    color: #272f25;
+}
+
+
+/* SHOP NAVIGATION */
+
+.shop-header {
+    background: #f5f3e9;
+    padding: 24px 3.3%;
+    min-height: 110px;
+}
+
+.shop-header .logo img {
+    width: 150px;
+}
+
+.shop-header nav {
+    display: flex;
+    gap: 55px;
+}
+
+.shop-header nav a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+
+.shop-account {
+    display: flex;
+    gap: 40px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+
+/* SHOP PAGE MARGINS */
+
+.shop-main {
+    padding: 28px 3.3% 0;
+}
+
+
+/* =====================================
+   HERO SECTION
+===================================== */
+
+.store-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    min-height: 570px;
+    padding: 40px 5.3%;
+
+    border-radius: 12px;
+
+    background: radial-gradient(
+        ellipse at 75% 35%,
+        #ffe2a7 0%,
+        #f5e3c0 25%,
+        #f1e8d3 60%
+    );
+}
+
+
+/* HERO TEXT */
+
+.store-hero-text {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    min-height: 460px;
+}
+
+.store-hero-text .eyebrow {
+    color: #6b814b;
+    font-size: 17px;
+    letter-spacing: 2.5px;
+}
+
+.store-hero h1 {
+    font-size: clamp(55px, 5vw, 95px);
+    line-height: 1.08;
+    font-weight: 500;
+    letter-spacing: -2px;
+}
+
+.store-hero h1 em {
+    font-weight: 600;
+}
+
+
+/* HERO PRODUCT IMAGE */
+
+.store-hero-image {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.store-hero-image img {
+    display: block;
+    width: 100%;
+    max-width: 540px;
+    max-height: 510px;
+    object-fit: contain;
+}
+
+
+/* BACKGROUND CURVES */
+
+.hero-curve {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+
+    width: 85%;
+    height: 220px;
+
+    border-radius: 50% 0 0 0;
+    transform: rotate(-12deg);
+}
+
+.curve-one {
+    background: rgba(168, 184, 138, 0.18);
+    bottom: -100px;
+    right: -30%;
+}
+
+.curve-two {
+    background: rgba(168, 184, 138, 0.25);
+    bottom: -140px;
+    right: -33%;
+}
+
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.store-button {
+    display: inline-block;
+
+    background: #272f25;
+    color: #fcfaf3;
+
+    padding: 19px 32px;
+    border-radius: 5px;
+
+    text-transform: uppercase;
+    font-size: 16px;
+
+    transition: background 0.3s ease;
+}
+
+.store-button:hover {
+    background: #526b43;
+}
+
+
+/* =====================================
+   TRUE TEA COLLECTION
+===================================== */
+
+.tea-collection {
+    padding: 48px 0 80px;
+}
+
+.collection-intro h2 {
+    font-size: clamp(30px, 2.5vw, 45px);
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.collection-intro h2 em {
+    font-weight: 600;
+}
+
+.collection-intro p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+
+/* TEA CATEGORY NAVIGATION */
+
+.tea-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+
+    border-top: 1px solid #d7d8cc;
+
+    margin-top: 48px;
+    padding: 24px 10px;
+
+    color: #747d68;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.tea-navigation a:hover {
+    color: #272f25;
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   PRODUCT GRID
+===================================== */
+
+.tea-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 55px 28px;
+}
+
+.tea-product {
+    scroll-margin-top: 30px;
+}
+
+.tea-product-image {
+    aspect-ratio: 4 / 4.5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.tea-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    transition: transform 0.4s ease;
+}
+
+.tea-product:hover .tea-product-image img {
+    transform: scale(1.045);
+}
+
+
+/* PRODUCT BACKGROUND COLORS */
+
+.green-bg {
+    background: radial-gradient(
+        ellipse at top,
+        #f1efce,
+        #c7d4b3
+    );
+}
+
+.white-bg {
+    background: radial-gradient(
+        ellipse at top,
+        #faf6e9,
+        #e4ddc8
+    );
+}
+
+.yellow-bg {
+    background: radial-gradient(
+        ellipse at top,
+        #fff1c2,
+        #e7d39a
+    );
+}
+
+.oolong-bg {
+    background: radial-gradient(
+        ellipse at top,
+        #f9e4ca,
+        #e5bc95
+    );
+}
+
+.black-bg {
+    background: radial-gradient(
+        ellipse at top,
+        #f1d6c8,
+        #cfa69b
+    );
+}
+
+.dark-bg {
+    background: radial-gradient(
+        ellipse at top,
+        #e8c9ba,
+        #b9938c
+    );
+}
+
+
+/* PRODUCT INFORMATION */
+
+.tea-product-info {
+    padding: 22px 0;
+}
+
+.tea-type {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #747d68;
+    margin-bottom: 8px;
+}
+
+.tea-product-info h3 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.tea-product-info p {
+    max-width: 320px;
+}
+
+.tea-quantity {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+
+
+/* =====================================
+   BRAND STORY
+===================================== */
+
+.store-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 6%;
+
+    text-align: left;
+    padding: 65px 5%;
+
+    background: radial-gradient(
+        ellipse at bottom right,
+        #d7dfc4,
+        #f3efdf 75%
+    );
+
+    border-radius: 12px;
+}
+
+
+/* LEFT SIDE — TEXT */
+
+.story-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.story-text .eyebrow {
+    color: #526b43;
+    margin-bottom: 30px;
+}
+
+.story-text h2 {
+    font-size: clamp(36px, 3.8vw, 65px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.story-text p:not(.eyebrow) {
+    max-width: 450px;
+    margin: 0 0 20px;
+}
+
+.story-text .store-button {
+    margin-top: 20px;
+}
+
+
+/* RIGHT SIDE — PHOTO */
+
+.story-image {
+    width: 100%;
+}
+
+.story-image img {
+    display: block;
+    width: 100%;
+    height: 500px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 5px;
+}
+
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+
+    .store-story {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 40px 25px;
+    }
+
+    .story-image img {
+        height: 350px;
+    }
+
+}
+
+/* =====================================
+   THE RITUAL / COMMUNITY
+===================================== */
+
+.store-ritual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 8%;
+
+    padding: 100px 5%;
+}
+
+.ritual-image img {
+    display: block;
+    width: 100%;
+    max-height: 550px;
+    object-fit: contain;
+}
+
+.ritual-text h2 {
+    font-size: clamp(40px, 4vw, 65px);
+}
+
+.ritual-text p:not(.eyebrow) {
+    max-width: 400px;
+    margin: 25px 0;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+    .shop-header {
+        position: relative;
+        min-height: 80px;
+    }
+
+    .shop-header .menu-button {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .shop-header nav {
+        display: none;
+        position: absolute;
+        z-index: 20;
+        top: 100%;
+        left: 20px;
+        right: 20px;
+        flex-direction: column;
+        gap: 0;
+        padding: 15px 20px;
+        background: #f5f3e9;
+        border: 1px solid #ded9cd;
+    }
+
+    .shop-header nav.open {
+        display: flex;
+    }
+
+    .shop-header nav a {
+        padding: 12px 0;
+    }
+
+    .shop-account {
+        display: none;
+    }
+
+    .store-hero {
+        min-height: 440px;
+        padding: 30px;
+    }
+
+    .store-hero-text {
+        min-height: 350px;
+    }
+
+    .tea-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tea-product-image {
+        padding: 25px;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .shop-main {
+        padding: 15px 4% 0;
+    }
+
+    .shop-header .logo img {
+        width: 110px;
+    }
+
+    .store-hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 30px 25px;
+    }
+
+    .store-hero-text {
+        min-height: auto;
+        gap: 25px;
+    }
+
+    .store-hero h1 {
+        font-size: 58px;
+    }
+
+    .store-hero-text .eyebrow {
+        font-size: 11px;
+    }
+
+    .store-hero-image img {
+        max-height: 350px;
+    }
+
+    .store-button {
+        padding: 15px 22px;
+        font-size: 13px;
+    }
+
+    .tea-collection {
+        padding-top: 35px;
+    }
+
+    .tea-navigation {
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-top: 30px;
+    }
+
+    .tea-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 12px;
+    }
+
+    .tea-product-image {
+        padding: 15px;
+    }
+
+    .tea-product-info h3 {
+        font-size: 23px;
+    }
+
+    .tea-product-info p {
+        font-size: 12px;
+    }
+
+    .store-story {
+        padding: 65px 20px;
+    }
+
+    .store-ritual {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 65px 0;
+    }
+
+}
+
+/* HORIZONTAL COLLECTION HERO */
+
+.store-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+    min-height: auto;
+    padding: 40px 5%;
+}
+
+.store-hero-image {
+    order: -1;
+    width: 100%;
+}
+
+.store-hero-image img {
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    height: auto;
+}
+
+.store-hero-text {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+}
+
+.store-hero-text .eyebrow {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+.store-hero h1 {
+    font-size: clamp(45px, 5vw, 85px);
+}
+
+.store-hero h1 br {
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    .store-hero-text {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .store-hero {
+        padding: 25px;
     }
 
 }

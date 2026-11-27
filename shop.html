@@ -1,81 +1,440 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STILL; | Shop</title>
+
+    <title>STILL; | Shop Tea</title>
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <a class="logo" href="index.html" aria-label="STILL; home">
+
+<body class="shop-page">
+
+    <!-- NAVIGATION -->
+
+    <header class="shop-header">
+
+        <a class="logo" href="index.html">
             <img src="Images/logo.png" alt="STILL;">
         </a>
 
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation">
-            <span>Menu</span>
-            <span class="menu-icon" aria-hidden="true">☰</span>
+        <button class="menu-button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="main-navigation">
+            Menu ☰
         </button>
 
         <nav id="main-navigation">
-            <a href="index.html#about">About</a>
-            <a href="index.html#tree-section">Our Tree</a>
-            <a href="index.html#share">Share Hope</a>
-            <a class="shop-link active" href="shop.html">Shop</a>
+            <a href="shop.html">Shop Tea</a>
+            <a href="index.html#about">Our Story</a>
+            <a href="index.html#tree-section">The Ritual</a>
         </nav>
+
+        <div class="shop-account">
+            <span>Sign In</span>
+            <span>Bag (0)</span>
+        </div>
+
     </header>
 
-    <main>
-        <section class="shop-hero">
-            <p class="eyebrow">THE STILL; COLLECTION</p>
-            <h1>Something for your<br>quiet moments.</h1>
+
+    <main class="shop-main">
+
+        <!-- HERO SECTION -->
+
+        <section class="store-hero">
+
+            <div class="store-hero-text">
+
+                <p class="eyebrow">
+                    A NEW DAY, ANOTHER CUP
+                </p>
+
+                <h1>
+                    You are<br>
+                    <em>still</em> here.
+                </h1>
+
+                <a href="#collection" class="store-button">
+                    Explore Our Teas
+                </a>
+
+            </div>
+
+            <div class="store-hero-image">
+
+                <img src="Images/long"
+                     alt="The six STILL tea varieties">
+
+            </div>
+
+            <!-- Decorative background curves -->
+
+            <div class="hero-curve curve-one"></div>
+            <div class="hero-curve curve-two"></div>
+
         </section>
 
-        <section class="shop-grid" aria-label="Products">
-            <article class="product-card">
-                <div class="product-image">Your product image</div>
-                <p class="eyebrow">TEA COLLECTION</p>
-                <h3>Product Name</h3>
-                <p class="product-price">$0.00</p>
-                <a class="button" href="mailto:hello@example.com?subject=Product inquiry">Inquire</a>
-            </article>
 
-            <article class="product-card">
-                <div class="product-image">Your product image</div>
-                <p class="eyebrow">TEA COLLECTION</p>
-                <h3>Product Name</h3>
-                <p class="product-price">$0.00</p>
-                <a class="button" href="mailto:hello@example.com?subject=Product inquiry">Inquire</a>
-            </article>
+        <!-- COLLECTION INTRODUCTION -->
 
-            <article class="product-card">
-                <div class="product-image">Your product image</div>
-                <p class="eyebrow">TEA COLLECTION</p>
-                <h3>Product Name</h3>
-                <p class="product-price">$0.00</p>
-                <a class="button" href="mailto:hello@example.com?subject=Product inquiry">Inquire</a>
-            </article>
+        <section class="tea-collection" id="collection">
+
+            <div class="collection-intro">
+
+                <h2>
+                    The <em>True Tea</em> Collection
+                </h2>
+
+                <p>
+                    All true tea comes from the same plant,<br>
+                    yet changes over time to create six
+                    completely different experiences.
+                </p>
+
+            </div>
+
+
+            <!-- TEA NAVIGATION -->
+
+            <div class="tea-navigation">
+
+                <a href="#green">Green</a>
+                <span>/</span>
+
+                <a href="#white">White</a>
+                <span>/</span>
+
+                <a href="#yellow">Yellow</a>
+                <span>/</span>
+
+                <a href="#oolong">Oolong</a>
+                <span>/</span>
+
+                <a href="#black">Black</a>
+                <span>/</span>
+
+                <a href="#dark">Dark</a>
+
+            </div>
+
+
+            <!-- PRODUCTS -->
+
+            <div class="tea-grid">
+
+
+                <!-- GREEN TEA -->
+
+                <article class="tea-product" id="green">
+
+                    <div class="tea-product-image green-bg">
+                        <img src="Images/green.png"
+                             alt="STILL Green Tea">
+                    </div>
+
+                    <div class="tea-product-info">
+
+                        <p class="tea-type">GREEN TEA</p>
+
+                        <h3><em>still.</em> here.</h3>
+
+                        <p>
+                            A little reminder to be present,
+                            wherever you are today.
+                        </p>
+
+                        <p class="tea-quantity">20 Tea Bags</p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- WHITE TEA -->
+
+                <article class="tea-product" id="white">
+
+                    <div class="tea-product-image white-bg">
+                        <img src="Images/white.png"
+                             alt="STILL White Tea">
+                    </div>
+
+                    <div class="tea-product-info">
+
+                        <p class="tea-type">WHITE TEA</p>
+
+                        <h3><em>still.</em> learning.</h3>
+
+                        <p>
+                            You don't have to have
+                            everything figured out today.
+                        </p>
+
+                        <p class="tea-quantity">20 Tea Bags</p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- YELLOW TEA -->
+
+                <article class="tea-product" id="yellow">
+
+                    <div class="tea-product-image yellow-bg">
+                        <img src="Images/yellow.png"
+                             alt="STILL Yellow Tea">
+                    </div>
+
+                    <div class="tea-product-info">
+
+                        <p class="tea-type">YELLOW TEA</p>
+
+                        <h3><em>still.</em> growing.</h3>
+
+                        <p>
+                            Even the smallest changes
+                            are a part of growing.
+                        </p>
+
+                        <p class="tea-quantity">20 Tea Bags</p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- OOLONG TEA -->
+
+                <article class="tea-product" id="oolong">
+
+                    <div class="tea-product-image oolong-bg">
+                        <img src="Images/oolong.png"
+                             alt="STILL Oolong Tea">
+                    </div>
+
+                    <div class="tea-product-info">
+
+                        <p class="tea-type">OOLONG TEA</p>
+
+                        <h3><em>still.</em> changing.</h3>
+
+                        <p>
+                            There is beauty in becoming
+                            someone you haven't met yet.
+                        </p>
+
+                        <p class="tea-quantity">20 Tea Bags</p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BLACK TEA -->
+
+                <article class="tea-product" id="black">
+
+                    <div class="tea-product-image black-bg">
+                        <img src="Images/black.png"
+                             alt="STILL Black Tea">
+                    </div>
+
+                    <div class="tea-product-info">
+
+                        <p class="tea-type">BLACK TEA</p>
+
+                        <h3><em>still.</em> going.</h3>
+
+                        <p>
+                            You can be afraid
+                            and still move forward.
+                        </p>
+
+                        <p class="tea-quantity">20 Tea Bags</p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DARK TEA -->
+
+                <article class="tea-product" id="dark">
+
+                    <div class="tea-product-image dark-bg">
+                        <img src="Images/dark.png"
+                             alt="STILL Dark Tea">
+                    </div>
+
+                    <div class="tea-product-info">
+
+                        <p class="tea-type">DARK TEA</p>
+
+                        <h3>There is <em>still</em> tea.</h3>
+
+                        <p>
+                            Through the past.
+                            To the present.
+                            There is still tomorrow.
+                        </p>
+
+                        <p class="tea-quantity">20 Tea Bags</p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
         </section>
+
+
+        
+<!-- BRAND STORY -->
+
+<section class="store-story">
+
+    <div class="story-text">
+
+        <p class="eyebrow">
+            THERE IS STILL TOMORROW
+        </p>
+
+        <h2>
+            Different teas.<br>
+            Different journeys.<br>
+            <em>The same beginning.</em>
+        </h2>
+
+        <p>
+            Every true tea begins with the same plant.
+            It is what happens along the way that
+            makes each tea different.
+        </p>
+
+        <p>
+            Like tea, we are shaped by what we
+            experience, how we change, and the
+            time we are given to grow.
+        </p>
+
+        <a href="index.html#about" class="store-button">
+            Discover Our Story
+        </a>
+
+    </div>
+
+    <div class="story-image">
+
+        <img src="Images/TeaSet.png"
+             alt="The beginning of every true tea">
+
+    </div>
+
+</section>
+
+
+
+        <!-- COMMUNITY CONNECTION -->
+
+        <section class="store-ritual">
+
+            <div class="ritual-image">
+
+                <img src="Images/Tree.png"
+                     alt="The Tree of Tomorrow">
+
+            </div>
+
+            <div class="ritual-text">
+
+                <p class="eyebrow">MORE THAN A CUP OF TEA</p>
+
+                <h2>
+                    Leave a thought.<br>
+                    <em>Grow a little hope.</em>
+                </h2>
+
+                <p>
+                    Somewhere, someone has left
+                    a little hope for you.
+                    Discover their words or leave
+                    something behind for someone else.
+                </p>
+
+                <a href="index.html#tree-section"
+                   class="store-button">
+                    The Tree of Tomorrow
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
 
+
+    <!-- FOOTER -->
+
     <footer>
-        <a class="logo" href="index.html" aria-label="STILL; home">
+
+        <a class="logo" href="index.html">
             <img src="Images/logo.png" alt="STILL;">
         </a>
+
         <p>Through the past. To the present.</p>
         <p>Through the bad. To the good.</p>
         <p>There is still tea.</p>
+
+        <div class="support">
+
+            <p>Every story deserves to continue.</p>
+
+            <p>
+                Need support in the U.S.?
+                Call or text <a href="tel:988">988</a>
+                or visit
+                <a href="https://988lifeline.org">
+                    988lifeline.org
+                </a>.
+            </p>
+
+        </div>
+
     </footer>
 
+
+    <!-- MOBILE NAVIGATION -->
+
     <script>
-        const menuButton = document.querySelector(".menu-button");
-        const navigation = document.querySelector("#main-navigation");
+
+        const menuButton =
+            document.querySelector(".menu-button");
+
+        const navigation =
+            document.querySelector("#main-navigation");
 
         menuButton.addEventListener("click", () => {
-            const isOpen = navigation.classList.toggle("open");
-            menuButton.setAttribute("aria-expanded", String(isOpen));
+
+            const isOpen =
+                navigation.classList.toggle("open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
         });
+
     </script>
+
 </body>
 </html>
