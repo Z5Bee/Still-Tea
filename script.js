@@ -217,9 +217,9 @@ function createLeaf(quote, index) {
 
     image.setAttribute("y", "-96");
 
-    image.setAttribute("width", "65");
+    image.setAttribute("width", "72");
 
-    image.setAttribute("height", "95");
+    image.setAttribute("height", "105");
 
     image.setAttribute("class", "leaf-image");
 

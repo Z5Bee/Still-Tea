@@ -2113,9 +2113,11 @@ nav .shop-link.active,
 }
 
 .tree-home-artwork .tree-container {
-    max-width: 550px;
+    max-width: min(820px, 70vh);
     width: 100%;
     margin: 0 auto;
+    position: relative;
+    transform: translateX(-42px);
 }
 
 .tree-home-artwork .tree-artwork {
@@ -2124,242 +2126,249 @@ nav .shop-link.active,
     height: auto;
 }
 
-.tree-home-artwork #leaf-count {
-    text-align: center;
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-top: 15px;
-    margin-bottom: 0;
+.tree-home-artwork #tea-tree {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
-.home-message {
-    display: grid;
-    grid-template-columns: 35% 1fr;
-    align-items: center;
-    gap: 6%;
-    margin: 0 3.3%;
-    padding: 65px 5%;
-    border-bottom: 1px solid #d7d8cc;
-}
-
-.home-message-heading h2 {
-    font-size: clamp(35px, 4vw, 65px);
-}
-
-.home-message-heading .eyebrow {
-    color: #526b43;
-}
-
-.home-message .quote-card {
-    border: none;
+.tree-quote {
+    position: absolute;
+    top: 59%;
+    left: 55%;
+    width: 40%;
+    z-index: 2;
+    text-align: left;
+    color: #303d2b;
     background: transparent;
-    border-radius: 0;
-    padding: 0;
+}
+
+.tree-quote .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.tree-quote #quote-text {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(14px, 1.5vw, 22px);
+    font-style: italic;
+    line-height: 1.3;
     margin: 0;
-    max-width: none;
-    text-align: left;
+    overflow-wrap: anywhere;
 }
 
-.home-message #quote-text {
-    font-size: clamp(30px, 3.5vw, 60px);
+.tree-quote #quote-author {
+    font-size: 11px;
+    margin-top: 12px;
 }
 
-.home-message #quote-author {
-    margin-top: 20px;
-}
-
-.home-page .share-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    column-gap: 8%;
-    text-align: left;
-    margin: 30px 3.3%;
-    padding: 65px 5%;
-    background: radial-gradient(ellipse at bottom left, #c7d5b1, #e6eadb 75%);
-    border-radius: 12px;
-}
-
-.home-page .share-section .eyebrow,
-.home-page .share-section h2,
-.home-page .share-section .section-description {
-    grid-column: 1;
-}
-
-.home-page .share-section h2 {
-    font-size: clamp(45px, 5vw, 75px);
-}
-
-.home-page .share-section .section-description {
-    margin: 25px 0;
-    max-width: 430px;
-}
-
-.home-page .share-section form {
-    grid-column: 2;
-    grid-row: 1 / span 3;
-    width: 100%;
-    max-width: none;
-    margin: 0;
-}
-
-.home-page .share-section textarea {
-    min-height: 180px;
-}
-
-.home-page .share-section form button {
-    border-radius: 5px;
-    text-transform: uppercase;
-}
-
-.home-purpose {
-    display: grid;
-    grid-template-columns: 35% 1fr;
-    align-items: center;
-    gap: 10%;
-    margin: 0 3.3%;
-    padding: 85px 6%;
-}
-
-.home-purpose-number {
+.tree-quote #random-leaf {
+    display: inline-block;
+    background: transparent;
     color: #526b43;
-}
-
-.home-purpose-number span {
-    display: block;
-    font-size: clamp(120px, 17vw, 260px);
-    line-height: 1;
-    letter-spacing: -6px;
-}
-
-.home-purpose-number p {
-    letter-spacing: 3px;
-    font-size: 13px;
-}
-
-.home-purpose-text h2 {
-    font-size: clamp(35px, 4vw, 65px);
-    margin-bottom: 25px;
-}
-
-.home-purpose-text p:not(.eyebrow) {
-    max-width: 450px;
-    margin-bottom: 20px;
-}
-
-.home-purpose-text .store-button {
+    border: none;
+    border-radius: 0;
+    text-decoration: underline;
+    text-align: left;
+    font-size: 11px;
+    padding: 0;
     margin-top: 15px;
 }
 
-.home-collection {
-    background: radial-gradient(ellipse at top, #f5e1ad, #f1e8d3);
-    margin: 0 3.3% 60px;
-    padding: 45px 5%;
-    border-radius: 12px;
+.tree-quote #random-leaf:hover {
+    background: transparent;
+    color: #272f25;
 }
 
-.home-collection > img {
-    display: block;
+.tree-home-artwork #leaf-count {
     width: 100%;
-    height: auto;
-    margin-bottom: 35px;
-}
-
-.home-collection-text {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.home-collection-text h2 {
-    font-size: clamp(30px, 3vw, 50px);
-    margin-bottom: 15px;
-}
-
-@media (max-width: 900px) {
-
-    .home-page header {
-        position: relative;
-    }
-
-    .home-page .menu-button {
-        display: flex;
-        margin-left: auto;
-    }
-
-    .home-page header nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 20px;
-        right: 20px;
-        z-index: 20;
-        flex-direction: column;
-        gap: 0;
-        padding: 15px 20px;
-        background: #f5f3e9;
-        border: 1px solid #ded9cd;
-    }
-
-    .home-page header nav.open {
-        display: flex;
-    }
-
-    .home-page header nav a {
-        padding: 12px 0;
-    }
-
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin: 5px 0 0;
+    padding-left: 0;
+    transform: translateX(-42px);
 }
 
 @media (max-width: 768px) {
 
-    .tree-home,
-    .home-message,
-    .home-page .share-section,
-    .home-purpose {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
     .tree-home {
-        padding: 30px 25px;
-        min-height: auto;
-    }
-
-    .tree-home-text h1 {
-        font-size: 60px;
+        grid-template-columns: 1fr;
+        gap: 35px;
     }
 
     .tree-home-artwork .tree-container {
-        max-width: 420px;
+        max-width: 550px;
     }
 
-    .home-message,
-    .home-purpose {
-        padding: 45px 20px;
+    .tree-quote {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        padding: 15px;
+        text-align: center;
     }
 
-    .home-page .share-section {
-        padding: 35px 25px;
+    .tree-home-artwork #tea-tree {
+        height: auto;
+        aspect-ratio: 800 / 1067;
     }
 
-    .home-page .share-section form {
-        grid-column: 1;
+    .tree-quote #quote-text {
+        font-size: 18px;
+    }
+
+    .home-page .tree-home-artwork,
+    .home-page .tree-home-text {
+        grid-column: auto;
         grid-row: auto;
     }
 
+}
+
+.home-page .tree-home {
+    grid-template-columns: 58% 42%;
+}
+
+.home-page .tree-home-artwork {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.home-page .tree-home-text {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* =====================================
+   POLISHED HOMEPAGE BOTTOM SECTIONS
+===================================== */
+
+.home-page .share-section {
+    position: relative;
+    overflow: hidden;
+    margin: 35px 3.3%;
+    padding: 70px 6%;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #edf1e4 0%, #d9e2c9 100%);
+}
+
+.home-page .share-section h2 {
+    max-width: 520px;
+    line-height: 1.05;
+}
+
+.home-page .share-section .section-description {
+    max-width: 430px;
+    margin-left: 0;
+    font-size: 16px;
+}
+
+.home-page .share-section form {
+    border-radius: 10px;
+}
+
+.home-page .share-section textarea,
+.home-page .share-section input {
+    background: rgba(255, 253, 248, 0.82);
+    border: 1px solid rgba(48, 61, 43, 0.18);
+}
+
+.home-page .share-section form button {
+    padding: 16px 28px;
+}
+
+.home-purpose {
+    margin: 20px 3.3%;
+    padding: 90px 6%;
+    border-radius: 14px;
+    background: #fcfaf3;
+}
+
+.home-purpose-number {
+    padding: 35px 0;
+    border-right: 1px solid #d7d8cc;
+}
+
+.home-purpose-number span {
+    color: #526b43;
+}
+
+.home-purpose-text {
+    max-width: 620px;
+}
+
+.home-purpose-text h2 {
+    line-height: 1.08;
+}
+
+.home-purpose-text .store-button {
+    margin-top: 20px;
+}
+
+.home-collection {
+    margin: 20px 3.3% 70px;
+    padding: 55px 5%;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.home-collection > img {
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.home-collection-text {
+    padding: 5px 2px 0;
+}
+
+.home-page .discover-button {
+    background: transparent;
+    color: #526b43;
+    border: 1px solid #526b43;
+    border-radius: 5px;
+    padding: 17px 25px;
+}
+
+.home-page .discover-button:hover {
+    background: #526b43;
+    color: #fcfaf3;
+}
+
+.home-page footer {
+    border-top: 1px solid rgba(248, 244, 235, 0.12);
+}
+
+@media (max-width: 768px) {
+
+    .home-page .share-section {
+        margin: 20px 4%;
+        padding: 45px 25px;
+    }
+
+    .home-purpose {
+        margin: 20px 4%;
+        padding: 55px 25px;
+    }
+
+    .home-purpose-number {
+        border-right: none;
+        border-bottom: 1px solid #d7d8cc;
+        padding: 10px 0 30px;
+    }
+
     .home-purpose-number span {
-        font-size: 140px;
+        font-size: 120px;
     }
 
     .home-collection {
-        padding: 25px;
-    }
-
-    .home-collection-text {
-        flex-direction: column;
-        align-items: flex-start;
+        margin: 20px 4% 45px;
+        padding: 30px 25px;
     }
 
 }

@@ -79,7 +79,7 @@
                     Plant a Leaf
                 </a>
 
-                <button id="random-leaf" type="button">
+                <button class="discover-button" type="button">
                     Discover a Little Hope
                 </button>
 
@@ -87,14 +87,20 @@
 
         </div>
 
+        <!-- LEFT SIDE: INTERACTIVE TREE -->
+
         <div class="tree-home-artwork">
 
             <div class="tree-container">
+
+                <!-- YOUR ORIGINAL TREE IMAGE -->
 
                 <img
                     class="tree-artwork"
                     src="Images/Tree.png"
                     alt="The Tree of Tomorrow">
+
+                <!-- INTERACTIVE LEAVES -->
 
                 <svg id="tea-tree"
                      viewBox="0 0 800 1067"
@@ -105,37 +111,37 @@
 
                 </svg>
 
+                <!-- QUOTE UNDER THE CANOPY -->
+
+                <div class="tree-quote">
+
+                    <p class="eyebrow">
+                        A LITTLE HOPE FOR TODAY
+                    </p>
+
+                    <div aria-live="polite">
+
+                        <blockquote id="quote-text">
+                            Select a leaf to discover its message.
+                        </blockquote>
+
+                        <p id="quote-author"></p>
+
+                    </div>
+
+                    <button id="random-leaf" type="button">
+                        Discover another leaf
+                    </button>
+
+                </div>
+
             </div>
+
+            <!-- LEAF COUNTER -->
 
             <p id="leaf-count" aria-live="polite">
                 0 leaves of hope
             </p>
-
-        </div>
-
-    </section>
-
-    <!-- MESSAGE FROM THE TREE -->
-
-    <section class="home-message">
-
-        <div class="home-message-heading">
-
-            <p class="eyebrow">
-                SOMETHING SOMEONE LEFT FOR YOU
-            </p>
-
-            <h2>A leaf of hope.</h2>
-
-        </div>
-
-        <div class="quote-card" aria-live="polite">
-
-            <blockquote id="quote-text">
-                Select a leaf to discover its message.
-            </blockquote>
-
-            <p id="quote-author"></p>
 
         </div>
 
@@ -213,7 +219,7 @@
             </h2>
 
             <p>
-                still; was created around the belief
+                STILL; was created around the belief
                 that even the smallest routines can
                 give us something to look forward to.
             </p>
@@ -236,7 +242,7 @@
     <section class="home-collection">
 
         <img src="Images/collection.png"
-             alt="The still True Tea Collection">
+             alt="The STILL True Tea Collection">
 
         <div class="home-collection-text">
 
