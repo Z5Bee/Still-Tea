@@ -501,12 +501,14 @@ footer .footer-navigation a {
     text-decoration: none;
 }
 
-footer .footer-support p {
-    margin: 0 0 6px;
+footer .footer-support {
+    text-align: right;
 }
 
+footer .footer-support .footer-heading,
+footer .footer-support p,
 footer .footer-support a {
-    text-decoration: underline;
+    text-align: right;
 }
 
 footer .footer-bottom {
