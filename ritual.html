@@ -41,7 +41,7 @@
 
         <div class="shop-account">
             <span>Sign In</span>
-            <span>Bag (0)</span>
+            <span class="bag-button" role="button" tabindex="0">Bag (0)</span>
         </div>
 
     </header>
@@ -209,10 +209,10 @@
                         even when we can't see it.
                     </p>
 
-                    <a href="shop.html#green"
-                       class="store-button">
-                        Explore Green Tea
-                    </a>
+                    <div class="ritual-tea-actions">
+                        <a href="shop.html#green" class="store-button">Explore Green Tea</a>
+                        <button class="ritual-add-to-bag" type="button" data-add-to-bag="green">Add to Bag</button>
+                    </div>
 
                 </div>
 
@@ -261,10 +261,10 @@
                         smallest steps matter.
                     </p>
 
-                    <a href="shop.html#white"
-                       class="store-button">
-                        Explore White Tea
-                    </a>
+                    <div class="ritual-tea-actions">
+                        <a href="shop.html#white" class="store-button">Explore White Tea</a>
+                        <button class="ritual-add-to-bag" type="button" data-add-to-bag="white">Add to Bag</button>
+                    </div>
 
                 </div>
 
@@ -313,10 +313,10 @@
                         patience and time.
                     </p>
 
-                    <a href="shop.html#yellow"
-                       class="store-button">
-                        Explore Yellow Tea
-                    </a>
+                    <div class="ritual-tea-actions">
+                        <a href="shop.html#yellow" class="store-button">Explore Yellow Tea</a>
+                        <button class="ritual-add-to-bag" type="button" data-add-to-bag="yellow">Add to Bag</button>
+                    </div>
 
                 </div>
 
@@ -366,10 +366,10 @@
                         still becoming.
                     </p>
 
-                    <a href="shop.html#oolong"
-                       class="store-button">
-                        Explore Oolong Tea
-                    </a>
+                    <div class="ritual-tea-actions">
+                        <a href="shop.html#oolong" class="store-button">Explore Oolong Tea</a>
+                        <button class="ritual-add-to-bag" type="button" data-add-to-bag="oolong">Add to Bag</button>
+                    </div>
 
                 </div>
 
@@ -419,10 +419,10 @@
                         evolve with time.
                     </p>
 
-                    <a href="shop.html#puerh"
-                       class="store-button">
-                        Explore Pu-Erh Tea
-                    </a>
+                    <div class="ritual-tea-actions">
+                        <a href="shop.html#puerh" class="store-button">Explore Pu-Erh Tea</a>
+                        <button class="ritual-add-to-bag" type="button" data-add-to-bag="puerh">Add to Bag</button>
+                    </div>
 
                 </div>
 
@@ -471,10 +471,10 @@
                         change, we can remain strong.
                     </p>
 
-                    <a href="shop.html#black"
-                       class="store-button">
-                        Explore Black Tea
-                    </a>
+                    <div class="ritual-tea-actions">
+                        <a href="shop.html#black" class="store-button">Explore Black Tea</a>
+                        <button class="ritual-add-to-bag" type="button" data-add-to-bag="black">Add to Bag</button>
+                    </div>
 
                 </div>
 
@@ -750,5 +750,7 @@
             });
         });
     </script>
+
+    <script src="cart.js"></script>
 </body>
 </html>
