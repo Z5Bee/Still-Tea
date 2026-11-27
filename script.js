@@ -92,33 +92,75 @@ const extraPositions = [
 // LOAD SAVED MESSAGES
 // =========================
 
-let userQuotes = [];
+// Add your Supabase Project URL and PUBLIC publishable key here.
+const SUPABASE_URL = "https://rfraaqovfgxqxcaivteb.supabase.co";
+const SUPABASE_KEY = "sb_publishable_ip7NLYJV31otmgPB0G3d5A_l9ffZaNP";
 
-try {
-    const saved = JSON.parse(
-        localStorage.getItem("stillUserQuotes")
-    );
+const databaseReady = SUPABASE_URL.startsWith("https://") &&
+    SUPABASE_KEY.startsWith("sb_publishable_");
 
-    if (Array.isArray(saved)) {
-        userQuotes = saved.filter(item =>
-            item &&
-            typeof item.message === "string" &&
-            typeof item.author === "string"
-        );
-    }
-
-} catch (error) {
-    console.log("Saved messages could not be loaded.");
-}
-
-let quotes = startingQuotes.map(message => ({
-    message: message,
-    author: "still;"
+const starterLeaves = startingQuotes.map((message, index) => ({
+    message,
+    author: "still;",
+    id: `starter-${index}`
 }));
 
-quotes = [...quotes, ...userQuotes];
-
+let quotes = [...starterLeaves];
 let selectedIndex = -1;
+
+async function loadSharedQuotes() {
+    if (!databaseReady) return;
+
+    try {
+        const shared = [];
+        let lastId = 0;
+        while (true) {
+            const url = new URL("/rest/v1/tree_quotes", SUPABASE_URL);
+            url.search = new URLSearchParams({
+                select: "id,message,author",
+                approved: "eq.true",
+                id: `gt.${lastId}`,
+                order: "id.asc",
+                limit: "200"
+            }).toString();
+
+            const response = await fetch(url, {
+                headers: { apikey: SUPABASE_KEY },
+                cache: "no-store"
+            });
+            if (!response.ok) throw new Error(`Load failed: ${response.status}`);
+            const rows = await response.json();
+            if (!rows.length) break;
+            shared.push(...rows);
+            lastId = rows[rows.length - 1].id;
+        }
+
+        const oldId = quotes[selectedIndex]?.id;
+        const focusedIndex = document.activeElement?.closest(".leaf")?.dataset.index;
+        const focusedId = quotes[Number(focusedIndex)]?.id;
+        const next = [...starterLeaves, ...shared];
+        if (JSON.stringify(next) === JSON.stringify(quotes)) return;
+        quotes = next;
+        buildTree();
+
+        selectedIndex = quotes.findIndex(quote => quote.id === oldId);
+        if (selectedIndex >= 0) {
+            displayQuote(selectedIndex);
+        } else {
+            quoteText.textContent = "Select a leaf to discover its message.";
+            quoteAuthor.textContent = "";
+        }
+        if (focusedId !== undefined) {
+            const newIndex = quotes.findIndex(quote => quote.id === focusedId);
+            if (newIndex >= 0) {
+                leafContainer.querySelector(`[data-index="${newIndex}"]`)?.focus();
+            }
+        }
+    } catch (error) {
+        console.error("Shared quotes could not be loaded.", error);
+    }
+}
+
 
 
 // =========================
@@ -376,83 +418,55 @@ messageInput.addEventListener("input", () => {
 // SUBMIT A NEW MESSAGE
 // =========================
 
-form.addEventListener("submit", event => {
-
+form.addEventListener("submit", async event => {
     event.preventDefault();
 
     const message = messageInput.value.trim();
+    const author = authorInput.value.trim() || "Anonymous";
+    const submitButton = form.querySelector('button[type="submit"]');
 
-    const author =
-        authorInput.value.trim() || "Anonymous";
-
-    if (!message || message.length > 200) {
-
+    if (!message || message.length > 200 || author.length > 40) {
         successMessage.textContent =
-            "Please enter a thought of 1–200 characters.";
-
+            "Please enter a thought of 1–200 characters and a name of up to 40 characters.";
         return;
-
     }
 
+    if (!databaseReady) {
+        successMessage.textContent = "The shared tree is not connected yet.";
+        return;
+    }
 
-    // Create the new quote
-
-    const newQuote = {
-        message: message,
-        author: author
-    };
-
-    quotes.push(newQuote);
-
-    userQuotes.push(newQuote);
-
-
-    // Save the message in the browser
-
-    let savedSuccessfully = true;
+    if (submitButton.disabled) return;
+    submitButton.disabled = true;
+    successMessage.textContent = "Sending your message...";
 
     try {
-
-        localStorage.setItem(
-            "stillUserQuotes",
-            JSON.stringify(userQuotes)
+        const response = await fetch(
+            new URL("/rest/v1/tree_quotes", SUPABASE_URL),
+            {
+                method: "POST",
+                headers: {
+                    apikey: SUPABASE_KEY,
+                    "Content-Type": "application/json",
+                    Prefer: "return=minimal"
+                },
+                body: JSON.stringify({ message, author })
+            }
         );
 
+        if (!response.ok) throw new Error(`Save failed: ${response.status}`);
+
+        form.reset();
+        characterCount.textContent = "0 / 200";
+        successMessage.textContent =
+            "Thank you. Your words have been saved and will become a leaf after review.";
     } catch (error) {
-
-        savedSuccessfully = false;
-
+        console.error("Message could not be saved.", error);
+        successMessage.textContent =
+            "Your message could not be saved. Please try again.";
+    } finally {
+        submitButton.disabled = false;
     }
-
-
-    // Add a new leaf to the tree
-
-    const newIndex = quotes.length - 1;
-
-    const newLeaf = createLeaf(newQuote, newIndex);
-
-    if (newLeaf) {
-
-        newLeaf.classList.add("new-leaf");
-
-    }
-
-    updateLeafCount();
-
-    displayQuote(newIndex);
-
-
-    // Reset the form
-
-    form.reset();
-
-    characterCount.textContent = "0 / 200";
-
-    successMessage.textContent = savedSuccessfully
-        ? "Your words have become a little leaf of hope."
-        : "Your leaf was added, but could not be saved.";
-
-
 });
 
 
@@ -461,6 +475,17 @@ form.addEventListener("submit", event => {
 // =========================
 
 buildTree();
+
+if (databaseReady) {
+    loadSharedQuotes();
+    // Refresh on return to the page. Visitors also get updates on reload.
+    window.addEventListener("pageshow", event => {
+        if (event.persisted) loadSharedQuotes();
+    });
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") loadSharedQuotes();
+    });
+}
 
 
 // Keep visible brand text lowercase throughout the homepage.
