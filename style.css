@@ -436,200 +436,123 @@ form button {
 ========================= */
 
 footer {
-    background-color: var(--dark-green);
-    color: var(--cream);
-
-    padding: 70px 20px;
-    text-align: center;
+    min-height: 210px;
+    height: auto;
+    padding: 25px 3.3%;
+    background: #E5E8D8;
+    color: #303D2B;
+    text-align: left;
 }
 
-footer .logo {
-    display: inline-block;
-    margin-bottom: 25px;
+footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.75fr 1.25fr;
+    gap: 4%;
+    align-items: start;
 }
 
-footer .logo img {
-    width: 85px;
+footer .footer-brand,
+footer .footer-navigation,
+footer .footer-support {
+    text-align: left;
+    color: #303D2B;
 }
 
-footer p {
+footer p,
+footer a {
+    color: #303D2B;
     font-size: 13px;
 }
 
-.support {
-    margin: 35px auto 0;
-    padding-top: 25px;
-    max-width: 450px;
-
-    border-top: 1px solid #77836e;
+footer .footer-brand .logo {
+    display: inline-block;
+    margin: 0 0 8px;
 }
 
-.support a {
+footer .footer-brand .logo img {
+    width: 100px;
+    height: auto;
+}
+
+footer .footer-brand-statement {
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+footer .footer-brand-statement em {
+    font-style: italic;
+}
+
+footer .footer-heading {
+    margin: 0 0 8px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+footer .footer-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+footer .footer-navigation a {
+    text-decoration: none;
+}
+
+footer .footer-support p {
+    margin: 0 0 6px;
+}
+
+footer .footer-support a {
     text-decoration: underline;
 }
 
+footer .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(48, 61, 43, 0.28);
+}
 
-/* =========================
-   MOBILE RESPONSIVENESS
-========================= */
-
-@media (max-width: 600px) {
-
-    header {
-        position: relative;
-        padding: 20px;
-        flex-direction: row;
-    }
-
-    .menu-button {
-        display: flex;
-        margin-left: auto;
-    }
-
-    nav {
-        display: none;
-        position: absolute;
-        z-index: 20;
-        top: 100%;
-        left: 20px;
-        right: 20px;
-        flex-direction: column;
-        gap: 0;
-        background: var(--cream);
-        border: 1px solid #ded9cd;
-        box-shadow: 0 15px 35px rgba(48, 61, 43, 0.12);
-        padding: 12px 20px;
-    }
-
-    nav.open {
-        display: flex;
-    }
-
-    nav a {
-        padding: 12px 0;
-        border-bottom: 1px solid #e7e1d4;
-    }
-
-    .shop-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .shop-hero h1 {
-        font-size: clamp(48px, 14vw, 72px);
-    }
-
+footer .footer-bottom p {
+    margin: 0;
 }
 
 @media (max-width: 900px) {
 
-    header {
-        position: relative;
+    footer {
+        min-height: 210px;
+        height: auto;
+        padding: 25px 4%;
     }
 
-    .menu-button {
-        display: flex;
+    footer .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
     }
 
-    nav {
-        display: none;
-        position: absolute;
-        z-index: 20;
-        top: 100%;
-        left: 20px;
-        right: 20px;
+}
+
+@media (max-width: 600px) {
+
+    footer {
+        padding: 25px 20px;
+    }
+
+    footer .footer-bottom {
         flex-direction: column;
-        gap: 0;
-        background: var(--cream);
-        border: 1px solid #ded9cd;
-        box-shadow: 0 15px 35px rgba(48, 61, 43, 0.12);
-        padding: 12px 20px;
-    }
-
-    nav.open {
-        display: flex;
-    }
-
-    nav a {
-        padding: 12px 0;
-        border-bottom: 1px solid #e7e1d4;
-    }
-
-    .shop-hero {
-        min-height: 52vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 80px 20px;
-        background: radial-gradient(ellipse at bottom, var(--peach), var(--yellow) 35%, var(--cream) 75%);
-    }
-
-    .shop-grid {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 80px 20px 120px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 28px;
-    }
-
-    .product-card {
-        text-align: center;
-    }
-
-    .product-image {
-        aspect-ratio: 4 / 5;
-        display: grid;
-        place-items: center;
-        margin-bottom: 20px;
-        border: 1px solid #ded9cd;
-        background: var(--white);
-        color: #9a927f;
-    }
-
-    .product-card h3 {
-        font-family: var(--heading-font);
-        font-size: 30px;
-        font-weight: 400;
-    }
-
-    .product-price {
-        margin: 8px 0 20px;
-    }
-
-    .product-card .button {
-        min-width: 140px;
-    }
-}
-
-@media (min-width: 901px) {
-
-    .logo img {
-        width: 140px;
+        align-items: flex-start;
+        gap: 8px;
     }
 
 }
 
-
-/* REDUCED MOTION ACCESSIBILITY */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-    }
-
-}
-
-/* =====================================
-   STILL; STOREFRONT
-===================================== */
+/* =========================
+   SHOP STYLES
+========================= */
 
 .shop-page {
     background: #fcfaf3;
@@ -640,31 +563,43 @@ footer p {
 /* SHOP NAVIGATION */
 
 .shop-header {
-    background: #f5f3e9;
-    padding: 24px 3.3%;
-    min-height: 110px;
+    min-height: 80px;
+    height: 80px;
+    padding: 10px 3.3%;
+    align-items: center;
+    border-bottom: 1px solid #ded9cd;
 }
 
 .shop-header .logo img {
-    width: 150px;
+    width: 140px;
 }
 
 .shop-header nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    gap: 55px;
+    align-items: center;
+    gap: 38px;
 }
 
 .shop-header nav a {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 15px;
+    position: relative;
+    padding: 28px 0 24px;
+}
+
+.shop-header nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 18px;
+    height: 1px;
+    background: var(--dark-green);
 }
 
 .shop-account {
-    display: flex;
-    gap: 40px;
-    text-transform: uppercase;
-    font-size: 14px;
+    margin-left: auto;
 }
 
 
@@ -672,6 +607,7 @@ footer p {
 
 .shop-main {
     padding: 28px 3.3% 0;
+    margin-bottom: 80px;
 }
 
 
@@ -935,11 +871,11 @@ footer p {
     );
 }
 
-.dark-bg {
+.puerh-bg {
     background: radial-gradient(
         ellipse at top,
-        #e8c9ba,
-        #b9938c
+        #f3c9ad,
+        #c68a7d
     );
 }
 
@@ -1363,6 +1299,7 @@ nav .shop-link.active,
 
 .ritual-main {
     padding: 28px 3.3% 0;
+    margin-bottom: 80px;
 }
 
 .ritual-page h1,
@@ -2040,18 +1977,20 @@ nav .shop-link.active,
 
 .tree-home {
     display: grid;
-    grid-template-columns: 42% 1fr;
+    grid-template-columns: 60% 40%;
     align-items: center;
     gap: 5%;
-    margin: 28px 3.3%;
-    padding: 45px 5%;
-    min-height: 80vh;
+    margin: 20px 3.3%;
+    padding: 30px 4%;
+    min-height: 78vh;
     border-radius: 12px;
-    background: radial-gradient(ellipse at right, #dce3c2, #f1e8d3 75%);
+    background: radial-gradient(ellipse at 35% 45%, #eee6ca 0%, #f7f2df 58%, #fcfaf3 100%);
 }
 
 .tree-home-text {
-    text-align: left;
+    max-width: 420px;
+    justify-self: end;
+    width: 100%;
 }
 
 .tree-home-text .eyebrow {
@@ -2064,7 +2003,7 @@ nav .shop-link.active,
 .tree-home-text h1 {
     font-size: clamp(65px, 6vw, 110px);
     line-height: 1.05;
-    margin-bottom: 35px;
+    margin-bottom: 18px;
 }
 
 .tree-home-text p:not(.eyebrow) {
@@ -2076,6 +2015,7 @@ nav .shop-link.active,
 .tree-home-text .tree-home-intro {
     font-size: 23px;
     line-height: 1.4;
+    margin-bottom: 12px;
 }
 
 .tree-home-buttons {
@@ -2139,6 +2079,7 @@ nav .shop-link.active,
     top: 59%;
     left: 55%;
     width: 40%;
+    transform: translate(25px, -20px);
     z-index: 2;
     text-align: left;
     color: #303d2b;
@@ -2231,144 +2172,102 @@ nav .shop-link.active,
 }
 
 .home-page .tree-home {
-    grid-template-columns: 58% 42%;
-}
-
-.home-page .tree-home-artwork {
-    grid-column: 1;
-    grid-row: 1;
+    grid-template-columns: 60% 40%;
+    min-height: 78vh;
 }
 
 .home-page .tree-home-text {
-    grid-column: 2;
-    grid-row: 1;
+    max-width: 420px;
+    justify-self: end;
+    width: 100%;
 }
 
-/* =====================================
-   POLISHED HOMEPAGE BOTTOM SECTIONS
-===================================== */
-
-.home-page .share-section {
-    position: relative;
-    overflow: hidden;
-    margin: 35px 3.3%;
-    padding: 70px 6%;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #edf1e4 0%, #d9e2c9 100%);
+.home-page .tree-home-text h1 {
+    margin-bottom: 18px;
 }
 
-.home-page .share-section h2 {
-    max-width: 520px;
-    line-height: 1.05;
+.home-page .tree-home-text .tree-home-intro {
+    margin-bottom: 12px;
 }
 
-.home-page .share-section .section-description {
-    max-width: 430px;
-    margin-left: 0;
-    font-size: 16px;
+.home-page .tree-form-heading {
+    margin: 22px 0 12px;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
-.home-page .share-section form {
-    border-radius: 10px;
+.home-page #quote-form {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    margin: 0;
 }
 
-.home-page .share-section textarea,
-.home-page .share-section input {
-    background: rgba(255, 253, 248, 0.82);
-    border: 1px solid rgba(48, 61, 43, 0.18);
+.home-page #quote-form textarea {
+    min-height: 110px;
+    height: 110px;
 }
 
-.home-page .share-section form button {
-    padding: 16px 28px;
+.home-page #quote-form input {
+    padding: 10px 12px;
+}
+
+.home-page #quote-form button {
+    width: auto;
+    min-width: 150px;
+    margin-top: 12px;
+    border-radius: 5px;
+}
+
+.home-page #character-count {
+    margin: 4px 0 12px;
 }
 
 .home-purpose {
-    margin: 20px 3.3%;
-    padding: 90px 6%;
-    border-radius: 14px;
-    background: #fcfaf3;
-}
-
-.home-purpose-number {
-    padding: 35px 0;
-    border-right: 1px solid #d7d8cc;
-}
-
-.home-purpose-number span {
-    color: #526b43;
-}
-
-.home-purpose-text {
-    max-width: 620px;
-}
-
-.home-purpose-text h2 {
-    line-height: 1.08;
-}
-
-.home-purpose-text .store-button {
-    margin-top: 20px;
-}
-
-.home-collection {
-    margin: 20px 3.3% 70px;
-    padding: 55px 5%;
-    border-radius: 14px;
-    overflow: hidden;
-}
-
-.home-collection > img {
-    max-height: 520px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.home-collection-text {
-    padding: 5px 2px 0;
-}
-
-.home-page .discover-button {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px;
+    margin: 25px 3.3%;
+    padding: 35px 5%;
+    border-top: 1px solid #d7d8cc;
+    border-bottom: 1px solid #d7d8cc;
+    border-radius: 0;
     background: transparent;
-    color: #526b43;
-    border: 1px solid #526b43;
-    border-radius: 5px;
-    padding: 17px 25px;
 }
 
-.home-page .discover-button:hover {
-    background: #526b43;
-    color: #fcfaf3;
+.home-purpose h2 {
+    margin: 8px 0 0;
+    font-size: clamp(32px, 3vw, 48px);
 }
 
-.home-page footer {
-    border-top: 1px solid rgba(248, 244, 235, 0.12);
+.home-purpose > div:last-child {
+    text-align: right;
+}
+
+.home-purpose > div:last-child p {
+    margin-bottom: 12px;
 }
 
 @media (max-width: 768px) {
 
-    .home-page .share-section {
-        margin: 20px 4%;
-        padding: 45px 25px;
+    .home-page .tree-home {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .home-page .tree-home-text {
+        max-width: 560px;
+        justify-self: start;
     }
 
     .home-purpose {
-        margin: 20px 4%;
-        padding: 55px 25px;
+        grid-template-columns: 1fr;
+        text-align: left;
     }
 
-    .home-purpose-number {
-        border-right: none;
-        border-bottom: 1px solid #d7d8cc;
-        padding: 10px 0 30px;
-    }
-
-    .home-purpose-number span {
-        font-size: 120px;
-    }
-
-    .home-collection {
-        margin: 20px 4% 45px;
-        padding: 30px 25px;
+    .home-purpose > div:last-child {
+        text-align: left;
     }
 
 }

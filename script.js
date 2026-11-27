@@ -453,11 +453,6 @@ form.addEventListener("submit", event => {
         : "Your leaf was added, but could not be saved.";
 
 
-    // Return to the tree
-
-    document.getElementById("tree-section")
-        .scrollIntoView();
-
 });
 
 

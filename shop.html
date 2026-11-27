@@ -31,7 +31,7 @@
 
         <nav id="main-navigation">
             <a href="index.html">Our Tree</a>
-            <a href="shop.html">Shop Tea</a>
+            <a class="active" href="shop.html">Shop Tea</a>
             <a href="story.html">Our Story</a>
             <a href="ritual.html">The Ritual</a>
         </nav>
@@ -117,10 +117,10 @@
                 <a href="#oolong">Oolong</a>
                 <span>/</span>
 
-                <a href="#black">Black</a>
+                <a href="#puerh">Pu-Erh</a>
                 <span>/</span>
 
-                <a href="#dark">Dark</a>
+                <a href="#black">Black</a>
 
             </div>
 
@@ -135,7 +135,7 @@
                 <article class="tea-product" id="green">
 
                     <div class="tea-product-image green-bg">
-                        <img src="Images/green.png"
+                        <img src="Images/Front/green.png"
                              alt="STILL Green Tea">
                     </div>
 
@@ -143,7 +143,7 @@
 
                         <p class="tea-type">GREEN TEA</p>
 
-                        <h3><em>still.</em> here.</h3>
+                        <h3><em>still</em> here.</h3>
 
                         <p>
                             A little reminder to be present,
@@ -162,7 +162,7 @@
                 <article class="tea-product" id="white">
 
                     <div class="tea-product-image white-bg">
-                        <img src="Images/white.png"
+                        <img src="Images/Front/white"
                              alt="STILL White Tea">
                     </div>
 
@@ -170,7 +170,7 @@
 
                         <p class="tea-type">WHITE TEA</p>
 
-                        <h3><em>still.</em> learning.</h3>
+                        <h3><em>still</em> healing.</h3>
 
                         <p>
                             You don't have to have
@@ -189,7 +189,7 @@
                 <article class="tea-product" id="yellow">
 
                     <div class="tea-product-image yellow-bg">
-                        <img src="Images/yellow.png"
+                        <img src="Images/Front/yellow"
                              alt="STILL Yellow Tea">
                     </div>
 
@@ -197,7 +197,7 @@
 
                         <p class="tea-type">YELLOW TEA</p>
 
-                        <h3><em>still.</em> growing.</h3>
+                        <h3><em>still</em> learning.</h3>
 
                         <p>
                             Even the smallest changes
@@ -216,7 +216,7 @@
                 <article class="tea-product" id="oolong">
 
                     <div class="tea-product-image oolong-bg">
-                        <img src="Images/oolong.png"
+                        <img src="Images/Front/oolong"
                              alt="STILL Oolong Tea">
                     </div>
 
@@ -224,11 +224,39 @@
 
                         <p class="tea-type">OOLONG TEA</p>
 
-                        <h3><em>still.</em> changing.</h3>
+                        <h3><em>still</em> becoming.</h3>
 
                         <p>
                             There is beauty in becoming
                             someone you haven't met yet.
+                        </p>
+
+                        <p class="tea-quantity">20 Tea Bags</p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PU-ERH TEA -->
+
+                <article class="tea-product" id="puerh">
+
+                    <div class="tea-product-image puerh-bg">
+                        <img src="Images/Front/puerh"
+                             alt="STILL Pu-Erh Tea">
+                    </div>
+
+                    <div class="tea-product-info">
+
+                        <p class="tea-type">PU-ERH TEA</p>
+
+                        <h3><em>still</em> evolving.</h3>
+
+                        <p>
+                            Through the past.
+                            To the present.
+                            There is still tomorrow.
                         </p>
 
                         <p class="tea-quantity">20 Tea Bags</p>
@@ -243,7 +271,7 @@
                 <article class="tea-product" id="black">
 
                     <div class="tea-product-image black-bg">
-                        <img src="Images/black.png"
+                        <img src="Images/Front/black"
                              alt="STILL Black Tea">
                     </div>
 
@@ -251,39 +279,11 @@
 
                         <p class="tea-type">BLACK TEA</p>
 
-                        <h3><em>still.</em> going.</h3>
+                        <h3><em>still</em> enduring.</h3>
 
                         <p>
                             You can be afraid
                             and still move forward.
-                        </p>
-
-                        <p class="tea-quantity">20 Tea Bags</p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- DARK TEA -->
-
-                <article class="tea-product" id="dark">
-
-                    <div class="tea-product-image dark-bg">
-                        <img src="Images/dark.png"
-                             alt="STILL Dark Tea">
-                    </div>
-
-                    <div class="tea-product-info">
-
-                        <p class="tea-type">DARK TEA</p>
-
-                        <h3>There is <em>still</em> tea.</h3>
-
-                        <p>
-                            Through the past.
-                            To the present.
-                            There is still tomorrow.
                         </p>
 
                         <p class="tea-quantity">20 Tea Bags</p>
@@ -348,30 +348,34 @@
     <!-- FOOTER -->
 
     <footer>
+        <div class="footer-grid">
 
-        <a class="logo" href="index.html">
-            <img src="Images/logo.png" alt="STILL;">
-        </a>
+            <div class="footer-brand">
+                <a class="logo" href="index.html" aria-label="STILL; home">
+                    <img src="Images/logo.png" alt="STILL;">
+                </a>
+                <p class="footer-brand-statement"><em>A cup for today.</em><br><em>A little hope for tomorrow.</em></p>
+            </div>
 
-        <p>Through the past. To the present.</p>
-        <p>Through the bad. To the good.</p>
-        <p>There is still tea.</p>
+            <nav class="footer-navigation" aria-label="Footer navigation">
+                <p class="footer-heading">EXPLORE</p>
+                <a href="index.html">Our Tree</a>
+                <a href="shop.html">Shop Tea</a>
+                <a href="story.html">Our Story</a>
+                <a href="ritual.html">The Ritual</a>
+            </nav>
 
-        <div class="support">
-
-            <p>Every story deserves to continue.</p>
-
-            <p>
-                Need support in the U.S.?
-                Call or text <a href="tel:988">988</a>
-                or visit
-                <a href="https://988lifeline.org">
-                    988lifeline.org
-                </a>.
-            </p>
+            <div class="footer-support">
+                <p class="footer-heading">YOU ARE NOT ALONE.</p>
+                <p>Every story deserves to continue;</p>
+            </div>
 
         </div>
 
+        <div class="footer-bottom">
+            <p>© 2026 STILL; Tea Co.</p>
+            <p>Hope in a cup.</p>
+        </div>
     </footer>
 
 
