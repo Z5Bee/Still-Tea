@@ -211,7 +211,7 @@ function createLeaf(quote, index) {
 
     const image = document.createElementNS(svgNS, "image");
 
-    image.setAttribute("href", "leaf.png");
+    image.setAttribute("href", "Images/leaf.png");
 
     image.setAttribute("x", "-42");
 

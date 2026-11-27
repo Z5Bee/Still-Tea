@@ -17,12 +17,20 @@
     <!-- NAVIGATION -->
 
     <header>
-        <a class="logo" href="#">still;</a>
+        <a class="logo" href="#" aria-label="STILL; home">
+            <img src="Images/logo.png" alt="STILL;">
+        </a>
 
-        <nav>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation">
+            <span>Menu</span>
+            <span class="menu-icon" aria-hidden="true">☰</span>
+        </button>
+
+        <nav id="main-navigation">
             <a href="#about">About</a>
             <a href="#tree-section">Our Tree</a>
             <a href="#share">Share Hope</a>
+            <a class="shop-link" href="shop.html">Shop</a>
         </nav>
     </header>
 
@@ -66,7 +74,7 @@
 
             <img
                 class="tree-artwork"
-                src="Untitled_Artwork 11.png"
+                src="Images/Tree.png"
                 alt="An illustrated green leafy tree against a dark background">
 
             <svg id="tea-tree"
@@ -157,7 +165,9 @@
 
     <footer>
 
-        <a class="logo" href="#">still;</a>
+        <a class="logo" href="#" aria-label="STILL; home">
+            <img src="Images/logo.png" alt="STILL;">
+        </a>
 
         <p>Through the past. To the present.</p>
         <p>Through the bad. To the good.</p>
@@ -179,6 +189,16 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+        const menuButton = document.querySelector(".menu-button");
+        const navigation = document.querySelector("#main-navigation");
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = navigation.classList.toggle("open");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+        });
+    </script>
 
 </body>
 </html>

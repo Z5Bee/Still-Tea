@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STILL; | Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html" aria-label="STILL; home">
+            <img src="Images/logo.png" alt="STILL;">
+        </a>
+
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation">
+            <span>Menu</span>
+            <span class="menu-icon" aria-hidden="true">☰</span>
+        </button>
+
+        <nav id="main-navigation">
+            <a href="index.html#about">About</a>
+            <a href="index.html#tree-section">Our Tree</a>
+            <a href="index.html#share">Share Hope</a>
+            <a class="shop-link active" href="shop.html">Shop</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="shop-hero">
+            <p class="eyebrow">THE STILL; COLLECTION</p>
+            <h1>Something for your<br>quiet moments.</h1>
+        </section>
+
+        <section class="shop-grid" aria-label="Products">
+            <article class="product-card">
+                <div class="product-image">Your product image</div>
+                <p class="eyebrow">TEA COLLECTION</p>
+                <h3>Product Name</h3>
+                <p class="product-price">$0.00</p>
+                <a class="button" href="mailto:hello@example.com?subject=Product inquiry">Inquire</a>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image">Your product image</div>
+                <p class="eyebrow">TEA COLLECTION</p>
+                <h3>Product Name</h3>
+                <p class="product-price">$0.00</p>
+                <a class="button" href="mailto:hello@example.com?subject=Product inquiry">Inquire</a>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image">Your product image</div>
+                <p class="eyebrow">TEA COLLECTION</p>
+                <h3>Product Name</h3>
+                <p class="product-price">$0.00</p>
+                <a class="button" href="mailto:hello@example.com?subject=Product inquiry">Inquire</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <a class="logo" href="index.html" aria-label="STILL; home">
+            <img src="Images/logo.png" alt="STILL;">
+        </a>
+        <p>Through the past. To the present.</p>
+        <p>Through the bad. To the good.</p>
+        <p>There is still tea.</p>
+    </footer>
+
+    <script>
+        const menuButton = document.querySelector(".menu-button");
+        const navigation = document.querySelector("#main-navigation");
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = navigation.classList.toggle("open");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+        });
+    </script>
+</body>
+</html>
