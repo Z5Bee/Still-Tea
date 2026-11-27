@@ -446,8 +446,8 @@ footer {
 
 footer .footer-grid {
     display: grid;
-    grid-template-columns: 1fr 0.75fr 1.25fr;
-    gap: 4%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5%;
     align-items: start;
 }
 
@@ -494,6 +494,7 @@ footer .footer-navigation {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    align-items: center;
 }
 
 footer .footer-navigation a {
@@ -532,6 +533,16 @@ footer .footer-bottom p {
     footer .footer-grid {
         grid-template-columns: 1fr;
         gap: 22px;
+    }
+
+    footer .footer-navigation,
+    footer .footer-navigation .footer-heading,
+    footer .footer-navigation a,
+    footer .footer-support,
+    footer .footer-support .footer-heading,
+    footer .footer-support p {
+        text-align: left;
+        align-items: flex-start;
     }
 
 }
