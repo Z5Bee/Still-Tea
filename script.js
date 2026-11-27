@@ -113,7 +113,7 @@ try {
 
 let quotes = startingQuotes.map(message => ({
     message: message,
-    author: "STILL;"
+    author: "still;"
 }));
 
 quotes = [...quotes, ...userQuotes];
@@ -466,3 +466,41 @@ form.addEventListener("submit", event => {
 // =========================
 
 buildTree();
+
+
+// Keep visible brand text lowercase throughout the homepage.
+
+function lowercaseStillText(node) {
+
+    const walker = document.createTreeWalker(
+        node,
+        NodeFilter.SHOW_TEXT
+    );
+
+    while (walker.nextNode()) {
+
+        walker.currentNode.textContent =
+            walker.currentNode.textContent.replace(/STILL/g, "still");
+
+    }
+
+    document.querySelectorAll("[alt], [aria-label], [title]").forEach(element => {
+
+        ["alt", "aria-label", "title"].forEach(attribute => {
+
+            if (element.hasAttribute(attribute)) {
+
+                element.setAttribute(
+                    attribute,
+                    element.getAttribute(attribute).replace(/STILL/g, "still")
+                );
+
+            }
+
+        });
+
+    });
+
+}
+
+lowercaseStillText(document.body);

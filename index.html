@@ -5,111 +5,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>STILL; | Hope in a Cup</title>
+    <title>still; | Hope in a Cup</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="home-page">
 
     <!-- NAVIGATION -->
 
-    <header>
-        <a class="logo" href="#" aria-label="STILL; home">
+    <header class="shop-header">
+        <a class="logo" href="index.html" aria-label="STILL; home">
             <img src="Images/logo.png" alt="STILL;">
         </a>
 
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation">
-            <span>Menu</span>
-            <span class="menu-icon" aria-hidden="true">☰</span>
+        <button class="menu-button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="main-navigation">
+            Menu ☰
         </button>
 
         <nav id="main-navigation">
-            <a href="#about">About</a>
-            <a href="#tree-section">Our Tree</a>
-            <a href="#share">Share Hope</a>
-            <a class="shop-link" href="shop.html">Shop</a>
+            <a href="index.html">Our Tree</a>
+            <a href="shop.html">Shop Tea</a>
+            <a href="story.html">Our Story</a>
+            <a href="ritual.html">The Ritual</a>
         </nav>
+
+        <div class="shop-account">
+            <span>Sign In</span>
+            <span>Bag (0)</span>
+        </div>
     </header>
 
 
-    <!-- INTRODUCTION -->
+    <!-- THE TREE OF TOMORROW -->
 
-    <section class="hero" id="about">
+    <section class="tree-home" id="tree-section">
 
-        <p class="eyebrow">HOPE IN A CUP</p>
+        <div class="tree-home-text">
 
-        <h1>There is still<br>more to your story.</h1>
+            <p class="eyebrow">
+                A LITTLE HOPE FOR TOMORROW
+            </p>
 
-        <p class="intro">
-            Someone was making tea hundreds of years ago.<br>
-            Someone is making tea today.<br>
-            Someone will make tea tomorrow.
-        </p>
+            <h1>
+                You are<br>
+                <em>still</em> here.
+            </h1>
 
-        <a href="#tree-section" class="button">
-            Discover a little hope
-        </a>
+            <p class="tree-home-intro">
+                Somewhere, someone has left
+                a little hope for you.
+            </p>
 
-    </section>
+            <p>
+                Every leaf holds a thought,
+                a reminder, or a piece of
+                someone's story.
+            </p>
 
+            <p>
+                Discover one or leave something
+                behind for someone else.
+            </p>
 
-    <!-- INTERACTIVE TEA TREE -->
+            <div class="tree-home-buttons">
 
-    <section class="tree-section" id="tree-section">
+                <a href="#share" class="store-button">
+                    Plant a Leaf
+                </a>
 
-        <p class="eyebrow">A COMMUNITY OF HOPE</p>
+                <button id="random-leaf" type="button">
+                    Discover a Little Hope
+                </button>
 
-        <h2>The Tree of Tomorrow.</h2>
-
-        <p class="section-description">
-            Every leaf holds a thought left behind by someone.
-            Select a leaf to discover a little hope,
-            or leave some for someone else.
-        </p>
-
-        <div class="tree-container">
-
-            <img
-                class="tree-artwork"
-                src="Images/Tree.png"
-                alt="An illustrated green leafy tree against a dark background">
-
-            <svg id="tea-tree"
-                 viewBox="0 0 800 1067"
-                 preserveAspectRatio="none"
-                 aria-label="Interactive tree of hopeful messages">
-
-                <!-- JavaScript adds the interactive leaves here -->
-
-                <g id="leaves"></g>
-
-            </svg>
+            </div>
 
         </div>
 
-        <p id="leaf-count" aria-live="polite">
-            0 leaves of hope
-        </p>
+        <div class="tree-home-artwork">
 
+            <div class="tree-container">
 
-        <!-- MESSAGE DISPLAY -->
+                <img
+                    class="tree-artwork"
+                    src="Images/Tree.png"
+                    alt="The Tree of Tomorrow">
+
+                <svg id="tea-tree"
+                     viewBox="0 0 800 1067"
+                     preserveAspectRatio="none"
+                     aria-label="Interactive tree of hopeful messages">
+
+                    <g id="leaves"></g>
+
+                </svg>
+
+            </div>
+
+            <p id="leaf-count" aria-live="polite">
+                0 leaves of hope
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- MESSAGE FROM THE TREE -->
+
+    <section class="home-message">
+
+        <div class="home-message-heading">
+
+            <p class="eyebrow">
+                SOMETHING SOMEONE LEFT FOR YOU
+            </p>
+
+            <h2>A leaf of hope.</h2>
+
+        </div>
 
         <div class="quote-card" aria-live="polite">
-
-            <p class="eyebrow">A LITTLE HOPE FOR TODAY</p>
 
             <blockquote id="quote-text">
                 Select a leaf to discover its message.
             </blockquote>
 
             <p id="quote-author"></p>
-
-            <button id="random-leaf" type="button">
-                Discover another leaf
-            </button>
 
         </div>
 
@@ -120,14 +146,16 @@
 
     <section class="share-section" id="share">
 
-        <p class="eyebrow">LEAVE SOMETHING BEHIND</p>
+        <p class="eyebrow">
+            SOMETHING TO LEAVE BEHIND
+        </p>
 
-        <h2>Plant a little hope.</h2>
+        <h2>Leave something for <em>tomorrow.</em></h2>
 
         <p class="section-description">
-            A favorite quote, a little reminder,
-            or something you wish someone had told you.
-            Your words could be what someone needs today.
+            A favorite quote. Something you've learned.
+            Something you wish someone had told you.
+            You never know who might need your words tomorrow.
         </p>
 
         <form id="quote-form">
@@ -137,7 +165,7 @@
             <textarea
                 id="message"
                 maxlength="200"
-                placeholder="Something worth holding onto..."
+                placeholder="What would you like someone to know?"
                 required></textarea>
 
             <p id="character-count">0 / 200</p>
@@ -161,11 +189,87 @@
     </section>
 
 
+    <!-- OUR PURPOSE -->
+
+    <section class="home-purpose">
+
+        <div class="home-purpose-number">
+
+            <span>1%</span>
+
+            <p>OF EVERY SALE</p>
+
+        </div>
+
+        <div class="home-purpose-text">
+
+            <p class="eyebrow">
+                MORE THAN A CUP OF TEA
+            </p>
+
+            <h2>
+                Every story deserves
+                to <em>continue;</em>
+            </h2>
+
+            <p>
+                still; was created around the belief
+                that even the smallest routines can
+                give us something to look forward to.
+            </p>
+
+            <p>
+                1% of every sale supports
+                suicide prevention.
+            </p>
+
+            <a href="story.html" class="store-button">
+                Discover Our Story
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- DISCOVER YOUR TEA -->
+
+    <section class="home-collection">
+
+        <img src="Images/collection.png"
+             alt="The still True Tea Collection">
+
+        <div class="home-collection-text">
+
+            <div>
+
+                <p class="eyebrow">
+                    A NEW DAY, ANOTHER CUP
+                </p>
+
+                <h2>
+                    Different teas. Different journeys.
+                </h2>
+
+                <p>
+                    Find the tea that feels like you today.
+                </p>
+
+            </div>
+
+            <a href="shop.html" class="store-button">
+                Explore Our Teas
+            </a>
+
+        </div>
+
+    </section>
+
+
     <!-- FOOTER -->
 
     <footer>
 
-        <a class="logo" href="#" aria-label="STILL; home">
+        <a class="logo" href="index.html" aria-label="STILL; home">
             <img src="Images/logo.png" alt="STILL;">
         </a>
 
@@ -194,9 +298,36 @@
         const menuButton = document.querySelector(".menu-button");
         const navigation = document.querySelector("#main-navigation");
 
-        menuButton.addEventListener("click", () => {
+        function closeMenu() {
+            navigation.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+        }
+
+        menuButton.addEventListener("click", event => {
+            event.stopPropagation();
+
             const isOpen = navigation.classList.toggle("open");
+
             menuButton.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        navigation.addEventListener("click", event => {
+            if (event.target.closest("a")) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener("click", event => {
+            if (!navigation.contains(event.target) &&
+                !menuButton.contains(event.target)) {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 900) {
+                closeMenu();
+            }
         });
     </script>
 

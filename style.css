@@ -68,7 +68,7 @@ button {
 .eyebrow {
     font-size: 11px;
     letter-spacing: 3px;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 20px;
 }
 
@@ -135,7 +135,7 @@ nav .shop-link {
 }
 
 nav .shop-link.active {
-    font-weight: 600;
+    font-weight: 400;
 }
 
 
@@ -522,12 +522,36 @@ footer p {
 
 @media (max-width: 900px) {
 
+    header {
+        position: relative;
+    }
+
     .menu-button {
         display: flex;
     }
 
     nav {
         display: none;
+        position: absolute;
+        z-index: 20;
+        top: 100%;
+        left: 20px;
+        right: 20px;
+        flex-direction: column;
+        gap: 0;
+        background: var(--cream);
+        border: 1px solid #ded9cd;
+        box-shadow: 0 15px 35px rgba(48, 61, 43, 0.12);
+        padding: 12px 20px;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        padding: 12px 0;
+        border-bottom: 1px solid #e7e1d4;
     }
 
     .shop-hero {
@@ -701,12 +725,12 @@ footer p {
 .store-hero h1 {
     font-size: clamp(55px, 5vw, 95px);
     line-height: 1.08;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: -2px;
 }
 
 .store-hero h1 em {
-    font-weight: 600;
+    font-weight: 400;
 }
 
 
@@ -796,7 +820,7 @@ footer p {
 }
 
 .collection-intro h2 em {
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .collection-intro p {
@@ -1069,6 +1093,21 @@ footer p {
 
 
 /* =====================================
+   REGULAR TYPE WEIGHT
+===================================== */
+
+h1, h2, h3, h4, h5, h6,
+strong, b, em, .eyebrow,
+nav .shop-link.active,
+.store-hero h1,
+.store-hero h1 em,
+.collection-intro h2,
+.collection-intro h2 em {
+    font-weight: 400 !important;
+}
+
+
+/* =====================================
    TABLET
 ===================================== */
 
@@ -1195,7 +1234,7 @@ footer p {
         font-size: 23px;
     }
 
-    .tea-product-info p {
+    .tea-product_info p {
         font-size: 12px;
     }
 
@@ -1265,6 +1304,1062 @@ footer p {
 
     .store-hero {
         padding: 25px;
+    }
+
+}
+
+/* =====================================
+   RITUAL PAGE HERO
+===================================== */
+
+.ritual-page-hero {
+    min-height: 52vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    background: radial-gradient(ellipse at bottom, var(--peach), var(--yellow) 35%, var(--cream) 75%);
+}
+
+.ritual-page-hero h1 {
+    font-size: clamp(55px, 7vw, 100px);
+}
+
+
+/* =====================================
+   COMMUNITY SECTION
+===================================== */
+
+.ritual-community {
+    min-height: 420px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    background: #dce3cf;
+}
+
+.ritual-community div {
+    max-width: 650px;
+}
+
+.ritual-community h2 {
+    font-size: clamp(38px, 5vw, 70px);
+    margin-bottom: 20px;
+}
+
+.ritual-community p:not(.eyebrow) {
+    margin-bottom: 30px;
+}
+
+/* =====================================
+   THE RITUAL PAGE
+===================================== */
+
+.ritual-page {
+    background: #fcfaf3;
+    color: #272f25;
+}
+
+.ritual-main {
+    padding: 28px 3.3% 0;
+}
+
+.ritual-page h1,
+.ritual-page h2,
+.ritual-page h3 {
+    font-family: "Fraunces", Georgia, serif;
+}
+
+.ritual-page h2 {
+    font-size: clamp(38px, 4.5vw, 75px);
+    line-height: 1.1;
+}
+
+.ritual-page .eyebrow {
+    letter-spacing: 2px;
+    color: #526b43;
+    font-size: 12px;
+}
+
+.ritual-page .store-button {
+    display: inline-block;
+    background: #272f25;
+    color: #fcfaf3;
+    padding: 18px 30px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.ritual-page .store-button:hover {
+    background: #526b43;
+}
+
+
+/* =====================================
+   HERO / OUR STORY
+===================================== */
+
+.ritual-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 6%;
+
+    padding: 65px 5%;
+    border-radius: 12px;
+
+    background: radial-gradient(
+        ellipse at bottom right,
+        #f4dca5,
+        #f1e8d3 70%
+    );
+}
+
+.ritual-hero-text {
+    text-align: left;
+}
+
+.ritual-hero h1 {
+    font-size: clamp(50px, 5.5vw, 100px);
+    line-height: 1.05;
+    margin-bottom: 30px;
+}
+
+.ritual-hero-text p:not(.eyebrow) {
+    max-width: 470px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.ritual-hero-text .ritual-statement {
+    font-size: 23px;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+.ritual-hero-photo img {
+    display: block;
+    width: 100%;
+    height: 650px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 5px;
+}
+
+
+/* =====================================
+   THE SEMICOLON
+===================================== */
+
+.semicolon-section {
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    align-items: center;
+    gap: 10%;
+
+    padding: 100px 8%;
+}
+
+.semicolon-symbol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.semicolon-symbol img {
+    display: block;
+    width: 65%;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.semicolon-text h2 {
+    margin-bottom: 25px;
+}
+
+.semicolon-text p:not(.eyebrow) {
+    max-width: 480px;
+    margin-bottom: 20px;
+}
+
+
+/* =====================================
+   DONATION SECTION
+===================================== */
+
+.donation-section {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    align-items: center;
+    gap: 7%;
+
+    padding: 80px 7%;
+    border-radius: 12px;
+
+    background: radial-gradient(
+        ellipse at bottom left,
+        #c7d5b1,
+        #e6eadb 75%
+    );
+}
+
+.donation-number {
+    color: #526b43;
+}
+
+.donation-number span {
+    display: block;
+    font-size: clamp(110px, 18vw, 280px);
+    line-height: 1;
+    letter-spacing: -8px;
+}
+
+.donation-number p {
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+.donation-text h2 {
+    font-size: clamp(35px, 3.7vw, 65px);
+    margin-bottom: 30px;
+}
+
+.donation-text p {
+    max-width: 480px;
+    margin-bottom: 20px;
+}
+
+.donation-text .store-button {
+    margin-top: 15px;
+}
+
+
+/* =====================================
+   TRUE TEA INTRODUCTION
+===================================== */
+
+.tea-education {
+    padding: 100px 0;
+}
+
+.tea-education-intro {
+    max-width: 800px;
+    padding: 0 2%;
+    text-align: left;
+}
+
+.tea-education-intro h2 {
+    font-size: clamp(55px, 6vw, 100px);
+    margin-bottom: 25px;
+}
+
+.tea-education-intro h3 {
+    font-size: clamp(22px, 2.5vw, 36px);
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.tea-education-intro p:not(.eyebrow) {
+    max-width: 650px;
+    margin-bottom: 18px;
+}
+
+
+/* TEA NAVIGATION */
+
+.ritual-tea-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    border-top: 1px solid #d7d8cc;
+
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 25px 2%;
+
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #747d68;
+}
+
+.ritual-tea-navigation a:hover {
+    color: #272f25;
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   INDIVIDUAL TEA SECTIONS
+===================================== */
+
+.ritual-tea {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 7%;
+
+    padding: 60px 6%;
+    margin-bottom: 24px;
+
+    border-radius: 12px;
+
+    scroll-margin-top: 30px;
+}
+
+
+/* ALTERNATE IMAGE PLACEMENT */
+
+.ritual-tea.reverse .ritual-tea-photo {
+    order: 2;
+}
+
+.ritual-tea.reverse .ritual-tea-text {
+    order: 1;
+}
+
+
+/* TEA IMAGES */
+
+.ritual-tea-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ritual-tea-photo img {
+    display: block;
+
+    width: 100%;
+    max-width: 480px;
+    height: 520px;
+
+    object-fit: contain;
+}
+
+
+/* TEA TEXT */
+
+.ritual-tea-text {
+    text-align: left;
+}
+
+.ritual-tea-text h2 {
+    font-size: clamp(45px, 5vw, 80px);
+    margin-bottom: 30px;
+}
+
+.ritual-tea-text h3 {
+    font-size: 14px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    margin-top: 25px;
+    margin-bottom: 8px;
+}
+
+.ritual-tea-text p:not(.eyebrow) {
+    max-width: 480px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.ritual-tea-text .store-button {
+    margin-top: 30px;
+}
+
+
+/* =====================================
+   INDIVIDUAL TEA COLORS
+===================================== */
+
+
+/* GREEN — STILL HERE */
+
+.ritual-green {
+    background: radial-gradient(
+        ellipse at top left,
+        #f0f1d1,
+        #c4d3ad
+    );
+}
+
+
+/* WHITE — STILL HEALING */
+
+.ritual-white {
+    background: radial-gradient(
+        ellipse at top right,
+        #fbf5e5,
+        #e3d4bb
+    );
+}
+
+
+/* YELLOW — STILL LEARNING */
+
+.ritual-yellow {
+    background: radial-gradient(
+        ellipse at top left,
+        #fff2bf,
+        #e8c576
+    );
+}
+
+
+/* OOLONG — STILL BECOMING */
+
+.ritual-oolong {
+    background: radial-gradient(
+        ellipse at top right,
+        #fce4bd,
+        #e5ae7e
+    );
+}
+
+
+/* PU-ERH — STILL EVOLVING */
+
+.ritual-puerh {
+    background: radial-gradient(
+        ellipse at top left,
+        #f5d5bc,
+        #d9a294
+    );
+}
+
+
+/* BLACK — STILL ENDURING */
+
+.ritual-black {
+    background: radial-gradient(
+        ellipse at top right,
+        #efd6cd,
+        #c6a0ac
+    );
+}
+
+
+/* =====================================
+   TEA RESEARCH NOTE
+===================================== */
+
+.tea-research-note {
+    max-width: 800px;
+
+    padding: 25px 2%;
+    margin-top: 15px;
+
+    font-size: 12px;
+    color: #626b59;
+}
+
+.tea-research-note p {
+    margin-bottom: 12px;
+}
+
+.tea-research-note a {
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   TREE OF TOMORROW
+===================================== */
+
+.ritual-community {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 8%;
+
+    background: #e4e8d8;
+
+    padding: 65px 5%;
+    margin-bottom: 70px;
+
+    border-radius: 12px;
+}
+
+.ritual-community-photo img {
+    display: block;
+    width: 100%;
+    max-height: 650px;
+    object-fit: contain;
+}
+
+.ritual-community-text h2 {
+    margin-bottom: 30px;
+}
+
+.ritual-community-text p:not(.eyebrow) {
+    max-width: 450px;
+    margin-bottom: 20px;
+}
+
+.ritual-community-text .store-button {
+    margin-top: 15px;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+    .ritual-header {
+        position: relative;
+    }
+
+    .ritual-header .menu-button {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .ritual-header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 20px;
+        right: 20px;
+        z-index: 20;
+
+        flex-direction: column;
+        gap: 0;
+
+        padding: 15px 20px;
+        background: #f5f3e9;
+        border: 1px solid #ded9cd;
+    }
+
+    .ritual-header nav.open {
+        display: flex;
+    }
+
+    .ritual-header nav a {
+        padding: 12px 0;
+    }
+
+    .ritual-header .shop-account {
+        display: none;
+    }
+
+    .ritual-hero {
+        padding: 40px 5%;
+    }
+
+    .ritual-hero-photo img {
+        height: 500px;
+    }
+
+    .ritual-tea-photo img {
+        height: 400px;
+    }
+
+    .ritual-tea {
+        padding: 40px 5%;
+        gap: 5%;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE RESPONSIVENESS
+===================================== */
+
+@media (max-width: 650px) {
+
+    .ritual-main {
+        padding: 15px 4% 0;
+    }
+
+    .ritual-hero,
+    .semicolon-section,
+    .donation-section,
+    .ritual-tea,
+    .ritual-community {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .ritual-hero,
+    .ritual-tea,
+    .donation-section,
+    .ritual-community {
+        padding: 35px 25px;
+    }
+
+    .ritual-hero h1 {
+        font-size: 60px;
+    }
+
+    .ritual-hero-photo img {
+        height: 350px;
+    }
+
+    .semicolon-section {
+        padding: 60px 20px;
+    }
+
+    .semicolon-symbol img {
+        max-height: 220px;
+    }
+
+    .donation-number span {
+        font-size: 140px;
+        letter-spacing: -5px;
+    }
+
+    .tea-education {
+        padding: 65px 0;
+    }
+
+    .tea-education-intro h2 {
+        font-size: 55px;
+    }
+
+    .ritual-tea-navigation {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .ritual-tea-photo img {
+        height: 320px;
+    }
+
+    .ritual-tea.reverse .ritual-tea-photo {
+        order: 0;
+    }
+
+    .ritual-tea.reverse .ritual-tea-text {
+        order: 1;
+    }
+
+    .ritual-community-photo img {
+        max-height: 350px;
+    }
+
+}
+
+/* =====================================
+   THE CUSTOMER'S DAILY RITUAL
+===================================== */
+
+.daily-ritual {
+    background: #f1e8d3;
+    padding: 65px 5%;
+    margin-bottom: 30px;
+    border-radius: 12px;
+}
+
+.daily-ritual-intro {
+    max-width: 650px;
+    text-align: left;
+    margin-bottom: 45px;
+}
+
+.daily-ritual-intro h2 {
+    margin-bottom: 20px;
+}
+
+.daily-ritual-intro p {
+    max-width: 550px;
+}
+
+.daily-ritual-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.ritual-step {
+    text-align: left;
+}
+
+.ritual-step img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.ritual-step .eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.ritual-step h3 {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.ritual-step p:not(.eyebrow) {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+
+    .daily-ritual {
+        padding: 35px 25px;
+    }
+
+    .daily-ritual-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .ritual-step img {
+        aspect-ratio: 4 / 3;
+    }
+
+}
+
+/* =====================================
+   STILL; COMMUNITY HOMEPAGE
+===================================== */
+
+.home-page {
+    background: #fcfaf3;
+    color: #272f25;
+}
+
+.tree-home {
+    display: grid;
+    grid-template-columns: 42% 1fr;
+    align-items: center;
+    gap: 5%;
+    margin: 28px 3.3%;
+    padding: 45px 5%;
+    min-height: 80vh;
+    border-radius: 12px;
+    background: radial-gradient(ellipse at right, #dce3c2, #f1e8d3 75%);
+}
+
+.tree-home-text {
+    text-align: left;
+}
+
+.tree-home-text .eyebrow {
+    color: #526b43;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.tree-home-text h1 {
+    font-size: clamp(65px, 6vw, 110px);
+    line-height: 1.05;
+    margin-bottom: 35px;
+}
+
+.tree-home-text p:not(.eyebrow) {
+    max-width: 400px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.tree-home-text .tree-home-intro {
+    font-size: 23px;
+    line-height: 1.4;
+}
+
+.tree-home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.home-page .store-button {
+    display: inline-block;
+    background: #272f25;
+    color: #fcfaf3;
+    border-radius: 5px;
+    padding: 18px 28px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.home-page .store-button:hover {
+    background: #526b43;
+}
+
+.tree-home-buttons #random-leaf {
+    margin: 0;
+    padding: 17px 25px;
+    border-radius: 5px;
+    border: 1px solid #526b43;
+}
+
+.tree-home-artwork {
+    width: 100%;
+    min-width: 0;
+}
+
+.tree-home-artwork .tree-container {
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tree-home-artwork .tree-artwork {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.tree-home-artwork #leaf-count {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.home-message {
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    align-items: center;
+    gap: 6%;
+    margin: 0 3.3%;
+    padding: 65px 5%;
+    border-bottom: 1px solid #d7d8cc;
+}
+
+.home-message-heading h2 {
+    font-size: clamp(35px, 4vw, 65px);
+}
+
+.home-message-heading .eyebrow {
+    color: #526b43;
+}
+
+.home-message .quote-card {
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+    text-align: left;
+}
+
+.home-message #quote-text {
+    font-size: clamp(30px, 3.5vw, 60px);
+}
+
+.home-message #quote-author {
+    margin-top: 20px;
+}
+
+.home-page .share-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    column-gap: 8%;
+    text-align: left;
+    margin: 30px 3.3%;
+    padding: 65px 5%;
+    background: radial-gradient(ellipse at bottom left, #c7d5b1, #e6eadb 75%);
+    border-radius: 12px;
+}
+
+.home-page .share-section .eyebrow,
+.home-page .share-section h2,
+.home-page .share-section .section-description {
+    grid-column: 1;
+}
+
+.home-page .share-section h2 {
+    font-size: clamp(45px, 5vw, 75px);
+}
+
+.home-page .share-section .section-description {
+    margin: 25px 0;
+    max-width: 430px;
+}
+
+.home-page .share-section form {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.home-page .share-section textarea {
+    min-height: 180px;
+}
+
+.home-page .share-section form button {
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.home-purpose {
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    align-items: center;
+    gap: 10%;
+    margin: 0 3.3%;
+    padding: 85px 6%;
+}
+
+.home-purpose-number {
+    color: #526b43;
+}
+
+.home-purpose-number span {
+    display: block;
+    font-size: clamp(120px, 17vw, 260px);
+    line-height: 1;
+    letter-spacing: -6px;
+}
+
+.home-purpose-number p {
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.home-purpose-text h2 {
+    font-size: clamp(35px, 4vw, 65px);
+    margin-bottom: 25px;
+}
+
+.home-purpose-text p:not(.eyebrow) {
+    max-width: 450px;
+    margin-bottom: 20px;
+}
+
+.home-purpose-text .store-button {
+    margin-top: 15px;
+}
+
+.home-collection {
+    background: radial-gradient(ellipse at top, #f5e1ad, #f1e8d3);
+    margin: 0 3.3% 60px;
+    padding: 45px 5%;
+    border-radius: 12px;
+}
+
+.home-collection > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 35px;
+}
+
+.home-collection-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.home-collection-text h2 {
+    font-size: clamp(30px, 3vw, 50px);
+    margin-bottom: 15px;
+}
+
+@media (max-width: 900px) {
+
+    .home-page header {
+        position: relative;
+    }
+
+    .home-page .menu-button {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .home-page header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 20px;
+        right: 20px;
+        z-index: 20;
+        flex-direction: column;
+        gap: 0;
+        padding: 15px 20px;
+        background: #f5f3e9;
+        border: 1px solid #ded9cd;
+    }
+
+    .home-page header nav.open {
+        display: flex;
+    }
+
+    .home-page header nav a {
+        padding: 12px 0;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .tree-home,
+    .home-message,
+    .home-page .share-section,
+    .home-purpose {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .tree-home {
+        padding: 30px 25px;
+        min-height: auto;
+    }
+
+    .tree-home-text h1 {
+        font-size: 60px;
+    }
+
+    .tree-home-artwork .tree-container {
+        max-width: 420px;
+    }
+
+    .home-message,
+    .home-purpose {
+        padding: 45px 20px;
+    }
+
+    .home-page .share-section {
+        padding: 35px 25px;
+    }
+
+    .home-page .share-section form {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .home-purpose-number span {
+        font-size: 140px;
+    }
+
+    .home-collection {
+        padding: 25px;
+    }
+
+    .home-collection-text {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
 }

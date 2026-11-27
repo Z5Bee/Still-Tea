@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>still; | Our Story</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+</head>
+
+<body class="ritual-page">
+
+    <header class="shop-header ritual-header">
+        <a class="logo" href="index.html">
+            <img src="Images/logo.png" alt="STILL;">
+        </a>
+
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation">
+            Menu ☰
+        </button>
+
+        <nav id="main-navigation">
+            <a href="index.html">Our Tree</a>
+            <a href="shop.html">Shop Tea</a>
+            <a href="story.html">Our Story</a>
+            <a href="ritual.html">The Ritual</a>
+        </nav>
+
+        <div class="shop-account">
+            <span>Sign In</span>
+            <span>Bag (0)</span>
+        </div>
+    </header>
+
+    <main class="ritual-main">
+
+        <!-- HERO / OUR STORY -->
+
+        <section class="ritual-hero" id="our-story">
+            <div class="ritual-hero-text">
+                <p class="eyebrow">A BRIGHTER DAY STILL BREWS</p>
+
+                <h1>
+                    There is<br>
+                    <em>still</em> tomorrow.
+                </h1>
+
+                <p>
+                    Some days are easier than others.
+                    We know it's hard.
+                    But the sun continues to rise,
+                    the seasons continue to change,
+                    and somewhere, a kettle is boiling.
+                </p>
+
+                <p>
+                    STILL was created around the belief
+                    that even the smallest routines can
+                    give us something to look forward to.
+                </p>
+
+                <p class="ritual-statement">
+                    A cup for today.<br>
+                    A little hope for tomorrow.
+                </p>
+
+                <p>There is STILL time.</p>
+            </div>
+
+            <div class="ritual-hero-photo">
+                <img src="Images/ritual.png" alt="A cup of tea in the morning sunlight">
+            </div>
+        </section>
+
+        <!-- THE SEMICOLON -->
+
+        <section class="semicolon-section">
+            <div class="semicolon-symbol">
+                <img src="Images/logo.png" alt="The STILL semicolon symbol">
+            </div>
+
+            <div class="semicolon-text">
+                <p class="eyebrow">MORE THAN A NAME</p>
+
+                <h2>
+                    A story that<br>
+                    <em>continues.</em>
+                </h2>
+
+                <p>
+                    A semicolon connects thoughts that could
+                    have stood as separate sentences.
+                    Instead of ending, the sentence continues.
+                </p>
+
+                <p>
+                    Within our identity, it represents
+                    the importance of continuation.
+                    A reminder that who you are today
+                    is not all you will ever be.
+                </p>
+
+                <p>
+                    You are still here.<br>
+                    You are still becoming.<br>
+                    Your story is still being written.
+                </p>
+            </div>
+        </section>
+
+        <!-- OUR DONATION -->
+
+        <section class="donation-section">
+            <div class="donation-number">
+                <p class="eyebrow">ONE CUP AT A TIME</p>
+                <span>1%</span>
+                <p>OF EVERY SALE</p>
+            </div>
+
+            <div class="donation-text">
+                <h2>
+                    Every story<br>
+                    deserves to <em>continue;</em>
+                </h2>
+
+                <p>1% of every sale supports suicide prevention.</p>
+
+                <p>
+                    STILL; was created with a purpose
+                    that extends beyond the cup.
+                    We believe that small, everyday actions
+                    can contribute to something greater.
+                </p>
+
+                <p>
+                    Through our commitment to suicide
+                    prevention, we hope to support efforts
+                    that make resources, education and
+                    help more accessible.
+                </p>
+
+                <p>Because there is still tomorrow.</p>
+
+                <a class="store-button" href="https://988lifeline.org" target="_blank" rel="noopener noreferrer">
+                    Find Support
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a class="logo" href="index.html">
+            <img src="Images/logo.png" alt="STILL;">
+        </a>
+
+        <p>Through the past. To the present.</p>
+        <p>Through the bad. To the good.</p>
+        <p>There is still tea.</p>
+
+        <div class="support">
+            <p>Every story deserves to continue;</p>
+            <p>
+                Need someone to talk to in the U.S.?
+                Call or text <a href="tel:988">988</a>
+                or visit <a href="https://988lifeline.org">988lifeline.org</a>.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.querySelector(".menu-button");
+        const navigation = document.querySelector("#main-navigation");
+
+        function closeMenu() {
+            navigation.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+        }
+
+        menuButton.addEventListener("click", event => {
+            event.stopPropagation();
+            const isOpen = navigation.classList.toggle("open");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        navigation.addEventListener("click", event => {
+            if (event.target.closest("a")) closeMenu();
+        });
+
+        document.addEventListener("click", event => {
+            if (!navigation.contains(event.target) && !menuButton.contains(event.target)) {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 900) closeMenu();
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll("*").forEach(element => {
+            if (element.children.length === 0 && element.textContent) {
+                element.textContent = element.textContent.replace(/STILL/g, "still");
+            }
+        });
+
+        document.querySelectorAll("[alt], [aria-label], [title]").forEach(element => {
+            ["alt", "aria-label", "title"].forEach(attribute => {
+                if (element.hasAttribute(attribute)) {
+                    element.setAttribute(attribute, element.getAttribute(attribute).replace(/STILL/g, "still"));
+                }
+            });
+        });
+    </script>
+</body>
+</html>
